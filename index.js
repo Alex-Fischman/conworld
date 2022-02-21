@@ -140,3 +140,40 @@ for (let x = 1; x != 6; x += 2) {
 	if (x == 7) x = 0;
 	glyph(document.getElementById("creatures-elements"), elements[x]);
 }
+
+let ctx;
+let oscillators = {};
+let playNote = (frequency, amplitude, duration, ramp = 0.05) => {
+	if (!ctx) ctx = new window.AudioContext
+	if (!oscillators[frequency]) {
+		let oscillator = ctx.createOscillator();
+		let gain = ctx.createGain();
+		oscillators[frequency] = {oscillator, gain};
+		oscillator.connect(gain).connect(ctx.destination);
+		oscillator.frequency.setValueAtTime(frequency, ctx.currentTime);
+		gain.gain.setValueAtTime(0, ctx.currentTime);
+		oscillator.start();
+	}
+	let {gain} = oscillators[frequency];
+	gain.gain.cancelScheduledValues(ctx.currentTime);
+	gain.gain.setTargetAtTime(amplitude, ctx.currentTime, ramp);
+	gain.gain.setTargetAtTime(0, ctx.currentTime + duration, ramp);
+};
+
+let input = {wheel: 0};
+document.addEventListener("keydown",     e => input[event.key] = true);
+document.addEventListener("keyup",       e => input[event.key] = false);
+document.addEventListener("pointerdown", _ => input.pressed    = true);
+document.addEventListener("pointerup",   _ => input.pressed    = false);
+document.addEventListener("pointermove", e => input.position   = {x: e.x, y: e.y});
+document.addEventListener("wheel",       e => input.wheel     += e.deltaY);
+
+let scaleCalculator = n => 216 * (2 ** (n/6));
+
+let notePlayer = () => {
+	let keyboard = {"a": 0, "s": 1, "d": 2, "f": 3, "g": 4, "h": 5, "j": 6};
+	let notes = Object.keys(input).filter(k => input[k] && keyboard.hasOwnProperty(k));
+	notes.forEach(n => playNote(scaleCalculator(keyboard[n]), 1 / notes.length, 0.02));
+	window.requestAnimationFrame(notePlayer);
+};
+window.requestAnimationFrame(notePlayer);
