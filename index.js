@@ -5,7 +5,7 @@
 //	to give, to know, to laugh, to hear, to hide, to suck, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to see, to crush/grind, to sit, to sleep, to walk
 // root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
-//	good, sand, soil, leaf, ant/bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
+//	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, man, moon, mountain, 
 //	path, round, seed, sun, tree
 
@@ -132,7 +132,8 @@ elements.forEach((r, i) => {
 		let number = createChild(document.getElementById("numbers-table"), "td");
 		let tr = createChild(createChild(number, "table"), "tr");
 		createChild(tr, "th").innerText = j;
-		glyph(tr, "si" + [...j.toString(6)].map(d => elements[parseInt(d)]).join(""), {link: false});
+		glyph(tr, "si" + [...j.toString(6)].map(d => elements[parseInt(d)])
+			.join(""), {link: false});
 	});
 });
 
@@ -144,7 +145,7 @@ for (let x = 1; x != 6; x += 2) {
 let ctx;
 let oscillators = {};
 let playNote = (frequency, amplitude, duration, ramp = 0.05) => {
-	if (!ctx) ctx = new window.AudioContext
+	if (!ctx) ctx = new window.AudioContext;
 	if (!oscillators[frequency]) {
 		let oscillator = ctx.createOscillator();
 		let gain = ctx.createGain();
@@ -160,20 +161,32 @@ let playNote = (frequency, amplitude, duration, ramp = 0.05) => {
 	gain.gain.setTargetAtTime(0, ctx.currentTime + duration, ramp);
 };
 
-let input = {wheel: 0};
-document.addEventListener("keydown",     e => input[event.key] = true);
-document.addEventListener("keyup",       e => input[event.key] = false);
-document.addEventListener("pointerdown", _ => input.pressed    = true);
-document.addEventListener("pointerup",   _ => input.pressed    = false);
-document.addEventListener("pointermove", e => input.position   = {x: e.x, y: e.y});
-document.addEventListener("wheel",       e => input.wheel     += e.deltaY);
-
-let scaleCalculator = n => 216 * (2 ** (n/6));
+let notes = [...Array(3).keys()].map(i => Array(6));
+[...Array(3).keys()].forEach(i => {
+	let keys = createChild(document.getElementById("music-table"), "tr");
+	[...Array(6).keys()].forEach(j => {
+		let key = createChild(keys, "td");
+		key.innerText = `${j + 1} / ${i + 1}`;
+		key.addEventListener("pointerdown", () => {
+			if (notes[i][j]) {
+				key.classList.remove("playing");
+				notes[i][j] = false;
+			} else {
+				key.classList.add("playing");
+				notes[i][j] = true;
+			}
+		});
+	});
+});
 
 let notePlayer = () => {
-	let keyboard = {"a": 0, "s": 1, "d": 2, "f": 3, "g": 4, "h": 5, "j": 6};
-	let notes = Object.keys(input).filter(k => input[k] && keyboard.hasOwnProperty(k));
-	notes.forEach(n => playNote(scaleCalculator(keyboard[n]), 1 / notes.length, 0.02));
+	let total = notes.flat().filter(n => n).length;
+	notes.forEach((ns, i) => ns.forEach((n, j) => {
+		if (n) playNote(200 * (j + 1) / (i + 1), 0.5 / total, 0.02);
+	}));
 	window.requestAnimationFrame(notePlayer);
 };
 window.requestAnimationFrame(notePlayer);
+
+// figure out functional harmonies in the 6-note scale
+// funky polyrhythm for worlds colliding
