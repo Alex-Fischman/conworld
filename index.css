@@ -118,7 +118,3 @@ tr:target::after {
 #Magic img {
 	width: 100%;
 }
-
-#Music .playing {
-	background-color: #333;
-}
