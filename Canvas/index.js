@@ -1,3 +1,19 @@
+// nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
+//	leg/foot, horn, navel, back, egg, knee, liver, skin, thigh, eye, tail, belly, feather, 
+//	finger/toenail, head, heart, 
+// to come, to do, to make, to say, to hit, to eat/drink, to stand, to bite, 
+//	to give, to know, to laugh, to hear, to hide, to suck, to carry, to take, to blow, to run, 
+//	to fall, to cry, to tie, to see, to crush/grind, to sit, to sleep, to walk
+// root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
+//	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
+//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, man, moon, mountain, 
+//	path, round, seed, sun, tree
+
+// questions: who, what, where, when, why, how
+// sex: male, female
+// animacy: alive, dead, kill, die
+// time: past, present, future
+
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const roots = consonants.flatMap(c => vowels.map(v => c + v));
@@ -46,7 +62,8 @@ const defs = {
 	"suni": "acid, poison, alcohol",
 	"suwa": "rain",
 };
-const elements = ["fa", "ka", "ni", "ga", "wa", "su"];
+const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
+const colors = ["#C33", "#3C3", "#333", "#33C", "#CCC", "#CC3"];
 
 const getContext = canvas => {
 	const context = canvas.getContext("2d");
@@ -62,10 +79,14 @@ const getContext = canvas => {
 	return context;
 };
 
-const drawSymbol = (context, symbol) => {
+const drawSymbol = (context, symbol, defaultColor = true) => {
 	context.lineCap = "round";
 	context.lineJoin = "round";
 	context.lineWidth = 0.2;
+	if (defaultColor) {
+		const i = elements.findIndex(e => e === symbol);
+		context.strokeStyle = i === -1? "#EEE": colors[i];
+	}
 	context.beginPath();
 	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
 	const normalVowelLine = () => {
@@ -157,15 +178,11 @@ const drawSymbol = (context, symbol) => {
 };
 
 window.addEventListener("resize", () => {
-	for (const root of roots) {
-		const context = getContext(document.getElementById(root));
-		context.strokeStyle = "#EEE";
-		drawSymbol(context, root);
-	}
+	for (const r of roots) drawSymbol(getContext(document.getElementById(r)), r);
 
 	const wordSorter = (a, b) => {
-		let c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
-		let v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
+		const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
+		const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
 		if (c !== 0) return c;
 		else if (v !== 0) return v;
 		else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
@@ -181,27 +198,20 @@ window.addEventListener("resize", () => {
 		tr.id = r;
 		createChild(tr, "td").innerText = r;
 		const td = createChild(tr, "td");
-		for (const symbol of r.match(/.{1,2}/g)) {
-			const context = getContext(createChild(td, "canvas"));
-			context.strokeStyle = "#EEE";
-			drawSymbol(context, symbol);
-		}
+		for (const symbol of r.match(/.{1,2}/g))
+			drawSymbol(getContext(createChild(td, "canvas")), symbol);
 		createChild(tr, "td").innerHTML = defs[r];
 	});
 
-	for (const i in elements) {
-		const context = getContext(document.getElementById(i));
-		context.strokeStyle = "#EEE";
-		drawSymbol(context, elements[i]);
-	}
+	for (const i in elements) drawSymbol(getContext(document.getElementById(i)), elements[i]);
 
 	{
 		const context = getContext(document.getElementById("magic"));
 		const nodes = Array(6).fill(0).map((_, i) => ({
-			symbol: ["ni", "ka", "fa", "su", "wa", "ga"][i],
-			color: ["#E33", "#3E3", "#333", "#33E", "#EEE", "#EE3"][i], 
-			x: 0.8 * Math.cos(i * Math.PI / 3 + Math.PI / 2),
-			y: 0.8 * Math.sin(i * Math.PI / 3 + Math.PI / 2)
+			symbol: elements[i],
+			color: colors[i],
+			x: 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2),
+			y: 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2),
 		}));
 		context.strokeStyle = "#222";
 		for (let i = 0; i < nodes.length; ++i) {
@@ -225,16 +235,12 @@ window.addEventListener("resize", () => {
 			context.save();
 			context.translate(node.x, node.y);
 			context.scale(0.1, 0.1);
-			drawSymbol(context, node.symbol);
+			drawSymbol(context, node.symbol, false);
 			context.restore();
 		}
 	}
 
-	for (const element of elements) {
-		const context = getContext(document.getElementById(element + "0"));
-		context.strokeStyle = "#EEE";
-		drawSymbol(context, element);
-	}
+	for (const e of elements) drawSymbol(getContext(document.getElementById(e + "0")), e);
 });
 
 window.dispatchEvent(new Event("resize"));
