@@ -14,7 +14,10 @@
 // animacy: alive, dead, kill, die
 // time: past, present, future
 
-let defs = {
+const consonants = [..."ptkfshmngwlj"];
+const vowels = [..."iau"];
+const roots = consonants.flatMap(c => vowels.map(v => c + v));
+const defs = {
 	"pi": "important",
 	"tu": "and",
 	"tuku": "separate",
@@ -59,85 +62,185 @@ let defs = {
 	"suni": "acid, poison, alcohol",
 	"suwa": "rain",
 };
+const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
+const colors = ["#C33", "#3C3", "#333", "#33C", "#CCC", "#CC3"];
 
-let consonants = [..."ptkfshmngwlj"];
-let vowels = [..."iau"];
-let roots = consonants.flatMap(c => vowels.map(v => c + v));
-let elements = ["fa", "ka", "ni", "ga", "wa", "su"];
-
-let createChild = (parent, type) => parent.appendChild(document.createElement(type));
-
-let glyph = (tr, symbol, {th = false, link = true} = {}) => {
-	let a = createChild(createChild(tr, th? "th": "td"), "a");
-	if (link) a.href = "#" + (a.dataset.title = symbol);
-	symbol.match(/.{1,2}/g).forEach(r => createChild(a, "img").src = `Orthography/${r}.svg`);
-	return a;
+const getContext = canvas => {
+	const context = canvas.getContext("2d");
+	const {width: w, height: h} = context.canvas.getBoundingClientRect();
+	context.canvas.width = w;
+	context.canvas.height = h;
+	context.fillStyle = "#111";
+	context.fillRect(0, 0, w, h);
+	context.setTransform(new DOMMatrix(w > h? 
+		[h / 2, 0, 0, -h / 2, h / 2 + (w - h) / 2, h / 2]: 
+		[w / 2, 0, 0, -w / 2, w / 2, w / 2 + (h - w) / 2]
+	));
+	return context;
 };
 
-for (let h of document.getElementsByTagName("h1")) {
-	let a = document.createElement("a");
-	h.parentElement.prepend(a);
-	a.href = "#" + h.parentElement.id;
-	a.appendChild(h);
-}
-
-[..."ptkfshmngwljiau"].forEach(l => {
-	let tr = createChild(createChild(document.getElementById(l), "table"), "tr");
-	createChild(tr, "td").innerHTML = l + (l == "g"? " /&#331;/": "");
-	glyph(tr, l, {link: false});
-});
-
-createChild(document.getElementById("orthography-vowels"), "div");
-[..."iauiau"].forEach(v => glyph(document.getElementById("orthography-vowels"), v, {th: true}));
-createChild(document.getElementById("orthography-vowels"), "div");
-for (let i = 0; i < 18; i += 3) {
-	let tr = createChild(document.getElementById("orthography-table"), "tr");
-	glyph(tr, roots[i][0], {th: true});
-	[i, i + 1, i + 2, i + 18, i + 19, i + 20].forEach(j => {
-		let a = glyph(tr, roots[j]);
-		if (!defs.hasOwnProperty(roots[j])) a.classList.add("undef");
-	});
-	glyph(tr, roots[i + 18][0], {th: true});
-}
-
-let wordSorter = (a, b) => {
-	let c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
-	let v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
-	if (c !== 0) return c;
-	else if (v !== 0) return v;
-	else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
-	else if (a.length > 2) return 1;
-	else if (b.length > 2) return -1;
-	else throw "duplicate word in sorter: " + a + ", " + b;
+const drawSymbol = (context, symbol, defaultColor = true) => {
+	context.lineCap = "round";
+	context.lineJoin = "round";
+	context.lineWidth = 0.2;
+	if (defaultColor) {
+		const i = elements.findIndex(e => e === symbol);
+		context.strokeStyle = i === -1? "#EEE": colors[i];
+	}
+	context.beginPath();
+	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
+	const normalVowelLine = () => {
+		if (symbol[1] === "i") line(0.8, 0.8, -0.8, 0.8);
+		else if (symbol[1] === "a") line(0.8, -0.8, -0.8, -0.8);
+		else if (symbol[1] === "u") line(0.8, 0, -0.8, 0)
+		else throw "unknown vowel in symbol: " + symbol;
+	};
+	if (symbol[0] === "p") {
+		line(0.8, 0.8, 0.8, -0.8);
+		normalVowelLine();
+	} else if (symbol[0] === "t") {
+		line(0, 0.8, 0, -0.8);
+		normalVowelLine();
+	} else if (symbol[0] === "k") {
+		line(-0.8, 0.8, -0.8, -0.8);
+		normalVowelLine();
+	} else if (symbol[0] === "f") {
+		line(0, 0.8, 0, -0.8);
+		if (symbol[1] === "u") {
+			context.moveTo(0.8, 0.4);
+			context.lineTo(-0.8, 0.4);
+			context.moveTo(0.8, -0.4);
+			context.lineTo(-0.8, -0.4);
+		} else {
+			line(0.8, 0, -0.8, 0);
+			normalVowelLine();
+		}
+	} else if (symbol[0] === "s") {
+		context.moveTo(0.4, 0.8);
+		context.lineTo(0.4, -0.8);
+		context.moveTo(-0.4, 0.8);
+		context.lineTo(-0.4, -0.8);
+		normalVowelLine();
+	} else if (symbol[0] === "h") {
+		line(0.8, 0.8, 0.8, -0.8);
+		line(-0.8, 0.8, -0.8, -0.8);
+		normalVowelLine();
+	} else if (symbol[0] === "m") {
+		context.moveTo(0, 0.8);
+		context.lineTo(0, 0);
+		context.lineTo(0.8, 0);
+		line(0.8, 0.8, 0.8, -0.8);
+		if (symbol[1] === "i") {
+			context.moveTo(0, 0.8);
+			context.lineTo(-0.8, 0.8);
+		} else normalVowelLine();
+	} else if (symbol[0] === "n") {
+		context.moveTo(0.8, 0.8);
+		context.lineTo(0.8, 0);
+		context.lineTo(0, 0);
+		line(0, 0.8, 0, -0.8);
+		if (symbol[1] === "i") {
+			context.moveTo(0, 0.8);
+			context.lineTo(-0.8, 0.8);
+		} else normalVowelLine();
+	} else if (symbol[0] === "g") {
+		context.moveTo(0, 0.8);
+		context.lineTo(0, 0);
+		context.lineTo(-0.8, 0);
+		line(-0.8, 0.8, -0.8, -0.8);
+		if (symbol[1] === "i") {
+			context.moveTo(0, 0.8);
+			context.lineTo(0.8, 0.8);
+		} else normalVowelLine();
+	} else if (symbol[0] === "w") {
+		context.moveTo(0.8, 0.8);
+		context.lineTo(0.8, 0);
+		context.lineTo(-0.8, 0);
+		context.lineTo(-0.8, -0.8);
+		if (symbol[1] === "i") {
+			context.moveTo(0, 0.8);
+			context.lineTo(0.8, 0.8);
+		} else normalVowelLine();
+	} else if (symbol[0] === "l") {
+		context.moveTo(0.8, 0.8);
+		context.lineTo(0.8, 0);
+		context.lineTo(0, 0);
+		context.lineTo(0, -0.8);
+		normalVowelLine();
+	} else if (symbol[0] === "j") {
+		context.moveTo(-0.8, 0.8);
+		context.lineTo(-0.8, 0);
+		context.lineTo(0, 0);
+		context.lineTo(0, -0.8);
+		normalVowelLine();
+	} else throw "unknown consonant in symbol: " + symbol;
+	context.stroke();
 };
 
-Object.keys(defs).sort(wordSorter).forEach(r => {
-	let tr = createChild(document.getElementById("dictionary-table"), "tr");
-	tr.id = r;
-	createChild(tr, "td").innerText = r;
-	glyph(tr, r, {link: false});
-	createChild(tr, "td").innerHTML = defs[r];
-});
+window.addEventListener("resize", () => {
+	for (const r of roots) drawSymbol(getContext(document.getElementById(r)), r);
 
-let digitList = createChild(document.getElementById("digits-table"), "tr");
-let digitGlyphs = createChild(document.getElementById("digits-table"), "tr");
-elements.forEach((r, i) => {
-	createChild(digitList, "th").innerText = i;
-	glyph(digitGlyphs, r);
-});
+	const wordSorter = (a, b) => {
+		const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
+		const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
+		if (c !== 0) return c;
+		else if (v !== 0) return v;
+		else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
+		else if (a.length > 2) return 1;
+		else if (b.length > 2) return -1;
+		else throw "duplicate word in sorter: " + a + ", " + b;
+	};
 
-[...Array(6).keys()].forEach(i => {
-	let numberList = createChild(document.getElementById("numbers-table"), "tr");
-	[...Array(6).keys()].map(n => n * 6 + i).forEach(j => {
-		let number = createChild(document.getElementById("numbers-table"), "td");
-		let tr = createChild(createChild(number, "table"), "tr");
-		createChild(tr, "th").innerText = j;
-		glyph(tr, "si" + [...j.toString(6)].map(d => elements[parseInt(d)])
-			.join(""), {link: false});
+	const createChild = (parent, type) => parent.appendChild(document.createElement(type));
+
+	Object.keys(defs).sort(wordSorter).forEach(r => {
+		const tr = createChild(document.getElementById("dictionary"), "tr");
+		tr.id = r;
+		createChild(tr, "td").innerText = r;
+		const td = createChild(tr, "td");
+		for (const symbol of r.match(/.{1,2}/g))
+			drawSymbol(getContext(createChild(td, "canvas")), symbol);
+		createChild(tr, "td").innerHTML = defs[r];
 	});
+
+	for (const i in elements) drawSymbol(getContext(document.getElementById(i)), elements[i]);
+
+	{
+		const context = getContext(document.getElementById("magic"));
+		const nodes = Array(6).fill(0).map((_, i) => ({
+			symbol: elements[i],
+			color: colors[i],
+			x: 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2),
+			y: 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2),
+		}));
+		context.strokeStyle = "#222";
+		for (let i = 0; i < nodes.length; ++i) {
+			for (let j = i + 1; j < nodes.length; ++j) {
+				if ((i === 0 && j === 3) || (i === 1 && j === 5) || (i === 2 && j === 4))
+					 context.lineWidth = 0.05;
+				else context.lineWidth = 0.03;
+				context.beginPath();
+				context.moveTo(nodes[i].x, nodes[i].y);
+				context.lineTo(nodes[j].x, nodes[j].y);
+				context.stroke();
+			}
+		}
+		context.lineWidth = 0.2;
+		context.strokeStyle = "#111";
+		for (const node of nodes) {
+			context.fillStyle = node.color;
+			context.beginPath();
+			context.arc(node.x, node.y, 0.2, 0, Math.PI * 2);
+			context.fill();
+			context.save();
+			context.translate(node.x, node.y);
+			context.scale(0.1, 0.1);
+			drawSymbol(context, node.symbol, false);
+			context.restore();
+		}
+	}
+
+	for (const e of elements) drawSymbol(getContext(document.getElementById(e + "0")), e);
 });
 
-for (let x = 1; x != 6; x += 2) {
-	if (x == 7) x = 0;
-	glyph(document.getElementById("creatures-elements"), elements[x]);
-}
+window.dispatchEvent(new Event("resize"));

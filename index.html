@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Conworld</title>
+		<meta charset="utf-8">
 		<link href="index.css" rel="stylesheet">
 	</head>
 	<body>
@@ -17,12 +18,12 @@
 		<div id="Phonology">
 			<h1>Phonology</h1>
 			<table>
-				<tr><td>CV</td><th>Front</th><th>Middle</th><th>Back</th></tr>
-				<tr><th>Plosive</th>	<td id="p"></td><td id="t"></td><td id="k"></td></tr>
-				<tr><th>Fricative</th>	<td id="f"></td><td id="s"></td><td id="h"></td></tr>
-				<tr><th>Nasal</th>		<td id="m"></td><td id="n"></td><td id="g"></td></tr>
-				<tr><th>Approximant</th><td id="w"></td><td id="l"></td><td id="j"></td></tr>
-				<tr><th>Vowel</th>		<td id="i"></td><td id="a"></td><td id="u"></td></tr>
+				<tr><td>CV</td><td>Front</td><td>Middle</td><td>Back</td></tr>
+				<tr><td>Plosive</td>	<td>p</td><td>t</td><td>k</td></tr>
+				<tr><td>Fricative</td>	<td>f</td><td>s</td><td>h</td></tr>
+				<tr><td>Nasal</td>		<td>m</td><td>n</td><td>g</td></tr>
+				<tr><td>Approximant</td><td>w</td><td>l</td><td>j</td></tr>
+				<tr><td>Vowel</td>		<td>i</td><td>a</td><td>u</td></tr>
 			</table>
 		</div>
 		<div id="Grammar">
@@ -32,36 +33,74 @@
 		</div>
 		<div id="Orthography">
 			<h1>Orthography</h1>
-			<table id="orthography-table"><tr id="orthography-vowels"></tr></table>
-			<table><tr>
-				<td><img src="Cursive.svg"></td>
-				<td><img src="Bitmap.svg"></td>
-				<td><a href="#Magic" data-title="magic"><img src="ElementsTable.svg"></a></td>
-			</tr></table>
+			<table>
+				<tr>
+					<td></td><td>i</td><td>a</td><td>u</td><td>i</td><td>a</td><td>u</td><td></td>
+				</tr>
+				<tr>
+					<td>p</td>
+					<td><canvas id="pi"></canvas></td><td><canvas id="pa"></canvas></td>
+					<td><canvas id="pu"></canvas></td><td><canvas id="mi"></canvas></td>
+					<td><canvas id="ma"></canvas></td><td><canvas id="mu"></canvas></td>
+				<td>m</td></tr>
+				<tr><td>t</td>
+					<td><canvas id="ti"></canvas></td><td><canvas id="ta"></canvas></td>
+					<td><canvas id="tu"></canvas></td><td><canvas id="ni"></canvas></td>
+					<td><canvas id="na"></canvas></td><td><canvas id="nu"></canvas></td>
+				<td>n</td></tr>
+				<tr><td>k</td>
+					<td><canvas id="ki"></canvas></td><td><canvas id="ka"></canvas></td>
+					<td><canvas id="ku"></canvas></td><td><canvas id="gi"></canvas></td>
+					<td><canvas id="ga"></canvas></td><td><canvas id="gu"></canvas></td>
+				<td>g</td></tr>
+				<tr><td>f</td>
+					<td><canvas id="fi"></canvas></td><td><canvas id="fa"></canvas></td>
+					<td><canvas id="fu"></canvas></td><td><canvas id="wi"></canvas></td>
+					<td><canvas id="wa"></canvas></td><td><canvas id="wu"></canvas></td>
+				<td>m</td></tr>
+				<tr><td>s</td>
+					<td><canvas id="si"></canvas></td><td><canvas id="sa"></canvas></td>
+					<td><canvas id="su"></canvas></td><td><canvas id="li"></canvas></td>
+					<td><canvas id="la"></canvas></td><td><canvas id="lu"></canvas></td>
+				<td>l</td></tr>
+				<tr><td>h</td>
+					<td><canvas id="hi"></canvas></td><td><canvas id="ha"></canvas></td>
+					<td><canvas id="hu"></canvas></td><td><canvas id="ji"></canvas></td>
+					<td><canvas id="ja"></canvas></td><td><canvas id="ju"></canvas></td>
+				<td>j</td></tr>
+			</table>
 		</div>
 		<div id="Dictionary">
 			<h1>Dictionary</h1>
-			<table id="dictionary-table"></table>
+			<table id="dictionary"></table>
 		</div>
 		<div id="Numbers">
 			<h1>Numbers</h1>
 			<p>All numbers start with si, which is followed by their base-6 representation, with each digit replaced by an element.</p>
-			<table id="digits-table"></table><br>
-			<table id="numbers-table"></table>
+			<table id="digits-table">
+				<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+				<tr>
+					<td><canvas id="0"></canvas></td><td><canvas id="1"></canvas></td>
+					<td><canvas id="2"></canvas></td><td><canvas id="3"></canvas></td>
+					<td><canvas id="4"></canvas></td><td><canvas id="5"></canvas></td>
+				</tr>
+			</table>
 		</div>
 		<div id="Magic">
 			<h1>Magic</h1>
-			<img src="Elements.svg">
+			<canvas id="magic"></canvas>
 			<p>The magic system is built around creating things.</p>
-			<p>Life energy ~= Mana => Max power of spells that can be cast<br>Mana recharges quickly, think cooldowns rather than spell slots</p>
-			<p>Swapping between worlds can only be done when it's night on the other side. Swapping brings a piece of the world with you.</p>
+			<p>Mana (life energy) is the max power of spells that can be cast<br>Mana recharges quickly, cooldown rather than spell slot</p>
 		</div>
 		<div id="Creatures">
 			<h1>Creatures</h1>
-			<p>Instead of using humans as the "base", humans are one of the specialists.</p>
 			<table id="creatures-table">
-				<tr><th colspan=3>Humans</th><th colspan=3>Demons</th></tr>
-				<tr id="creatures-elements"></tr>
+				<tr><td colspan=3>Humans</td><td colspan=3>Demons</td></tr>
+				<tr>
+					<td><canvas id="ka0"></canvas></td><td><canvas id="ga0"></canvas></td>
+					<td><canvas id="su0"></canvas></td><td><canvas id="fa0"></canvas></td>
+					<td><canvas id="ni0"></canvas></td><td><canvas id="wa0"></canvas></td>
+				</tr>
 				<tr>
 					<td colspan=3>Independent tribes, separated by water or by distance</td>
 					<td colspan=3>Share memories with others on the same planet during the day</td>
@@ -74,14 +113,8 @@
 					<td colspan=3>Day comes from orbit of star</td>
 					<td colspan=3>Day comes from merging of creatures</td>
 				</tr>
-				<tr>
-					<td colspan=3>Human shaped</td>
-					<td colspan=3>Comet shaped</td>
-				</tr>
-				<tr>
-					<td colspan=3>Breeding</td>
-					<td colspan=3>Mitosis</td>
-				</tr>
+				<tr><td colspan=3>Human shaped</td><td colspan=3>Comet shaped</td></tr>
+				<tr><td colspan=3>Sexual</td><td colspan=3>Asexual</td></tr>
 			</table>
 		</div>
 		<script src="index.js"></script>
