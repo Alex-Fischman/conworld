@@ -17,53 +17,27 @@
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const roots = consonants.flatMap(c => vowels.map(v => c + v));
-const defs = {
-	"pi": "important",
-	"tu": "and",
-	"tuku": "separate",
-	"ma": "parent",
-	"maku": "child",
-	"ni": "fire, hot",
-	"niku": "cold",
-	"niwa": "smoke",
-	"niga": "radiation",
-	"na": "it",
-	"nasi": "them",
-	"napi": "this",
-	"napiku": "that, other",
-	"ka": "earth, strong",
-	"kaku": "weak",
-	"kani": "lava",
-	"ku": "not",
-	"kuna": "nothing",
-	"gi": "I",
-	"giku": "you",
-	"gisi": "we",
-	"ga": "light, color",
-	"gafa": "black",
-	"gawa": "white",
-	"gani": "red",
-	"gaka": "green",
-	"gaga": "yellow",
-	"gasu": "blue",
-	"fa": "void",
-	"faku": "chaos",
-	"fu": "<a href=\"#Magic\">magic</a>",
-	"wa": "air",
-	"wawu": "wind",
-	"wani": "lightning",
-	"wasu": "cloud",
-	"wu": "go",
-	"si": "many, <a href=\"#Numbers\">number</a>",
-	"siku": "only",
-	"sipi": "all",
-	"sipina": "everything",
-	"su": "water",
-	"suni": "acid, poison, alcohol",
-	"suwa": "rain",
-};
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const colors = ["#C33", "#3C3", "#333", "#33C", "#CCC", "#CC3"];
+const defs = {
+	"pi": "important",
+	"tu": "and", "tuku": "separate",
+	"ma": "parent", "maku": "child",
+	"ni": "fire, hot", "niku": "cold", "niwa": "smoke", "niga": "radiation",
+	"na": "it", "nasi": "them", "napi": "this", "napiku": "that, other",
+	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
+	"ku": "not", "kuna": "nothing",
+	"gi": "I", "giku": "you", "gisi": "we",
+	"ga": "light, color", "gafa": "black", "gawa": "white", "gani": "red", "gaka": "green",
+		"gaga": "yellow", "gasu": "blue",
+	"fa": "void", "faku": "chaos",
+	"fu": "<a href=\"#Magic\">magic</a>",
+	"wa": "air", "wawu": "wind", "wani": "lightning", "wasu": "cloud",
+	"wu": "go",
+	"si": "many, <a href=\"#Numbers\">number</a>", "siku": "only", "sipi": "all",
+		"sipina": "everything",
+	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain",
+};
 
 const getContext = canvas => {
 	const context = canvas.getContext("2d");
@@ -87,7 +61,7 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 		const i = elements.findIndex(e => e === symbol);
 		context.strokeStyle = i === -1? "#EEE": colors[i];
 	}
-	context.beginPath();
+
 	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
 	const normalVowelLine = () => {
 		if (symbol[1] === "i") line(0.8, 0.8, -0.8, 0.8);
@@ -95,6 +69,8 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 		else if (symbol[1] === "u") line(0.8, 0, -0.8, 0)
 		else throw "unknown vowel in symbol: " + symbol;
 	};
+
+	context.beginPath();
 	if (symbol[0] === "p") {
 		line(0.8, 0.8, 0.8, -0.8);
 		normalVowelLine();
@@ -180,28 +156,29 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 window.addEventListener("resize", () => {
 	for (const r of roots) drawSymbol(getContext(document.getElementById(r)), r);
 
-	const wordSorter = (a, b) => {
-		const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
-		const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
-		if (c !== 0) return c;
-		else if (v !== 0) return v;
-		else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
-		else if (a.length > 2) return 1;
-		else if (b.length > 2) return -1;
-		else throw "duplicate word in sorter: " + a + ", " + b;
-	};
+	{
+		const wordSorter = (a, b) => {
+			const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
+			const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
+			if (c !== 0) return c;
+			else if (v !== 0) return v;
+			else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
+			else if (a.length > 2) return 1;
+			else if (b.length > 2) return -1;
+			else throw "duplicate word in sorter: " + a + ", " + b;
+		};
 
-	const createChild = (parent, type) => parent.appendChild(document.createElement(type));
+		const createChild = (parent, type) => parent.appendChild(document.createElement(type));
 
-	Object.keys(defs).sort(wordSorter).forEach(r => {
-		const tr = createChild(document.getElementById("dictionary"), "tr");
-		tr.id = r;
-		createChild(tr, "td").innerText = r;
-		const td = createChild(tr, "td");
-		for (const symbol of r.match(/.{1,2}/g))
-			drawSymbol(getContext(createChild(td, "canvas")), symbol);
-		createChild(tr, "td").innerHTML = defs[r];
-	});
+		Object.keys(defs).sort(wordSorter).forEach(r => {
+			const tr = createChild(document.getElementById("dictionary"), "tr");
+			createChild(tr, "td").innerText = r;
+			const td = createChild(tr, "td");
+			for (const symbol of r.match(/.{1,2}/g))
+				drawSymbol(getContext(createChild(td, "canvas")), symbol);
+			createChild(tr, "td").innerHTML = defs[r];
+		});
+	}
 
 	for (const i in elements) drawSymbol(getContext(document.getElementById(i)), elements[i]);
 
