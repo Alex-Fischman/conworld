@@ -18,7 +18,6 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const roots = consonants.flatMap(c => vowels.map(v => c + v));
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
-const colors = ["#C33", "#3C3", "#333", "#33C", "#CCC", "#CC3"];
 const defs = {
 	"pi": "important",
 	"tu": "and", "tuku": "separate",
@@ -57,10 +56,7 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 	context.lineCap = "round";
 	context.lineJoin = "round";
 	context.lineWidth = 0.2;
-	if (defaultColor) {
-		const i = elements.findIndex(e => e === symbol);
-		context.strokeStyle = i === -1? "#EEE": colors[i];
-	}
+	if (defaultColor) context.strokeStyle = "#EEE";
 
 	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
 	const normalVowelLine = () => {
@@ -83,69 +79,51 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 	} else if (symbol[0] === "f") {
 		line(0, 0.8, 0, -0.8);
 		if (symbol[1] === "u") {
-			context.moveTo(0.8, 0.4);
-			context.lineTo(-0.8, 0.4);
-			context.moveTo(0.8, -0.4);
-			context.lineTo(-0.8, -0.4);
+			line(0.8, 0.4, -0.8, 0.4);
+			line(0.8, -0.4, -0.8, -0.4);
 		} else {
 			line(0.8, 0, -0.8, 0);
 			normalVowelLine();
 		}
 	} else if (symbol[0] === "s") {
-		context.moveTo(0.4, 0.8);
-		context.lineTo(0.4, -0.8);
-		context.moveTo(-0.4, 0.8);
-		context.lineTo(-0.4, -0.8);
+		line(0.4, 0.8, 0.4, -0.8);
+		line(-0.4, 0.8, -0.4, -0.8);
 		normalVowelLine();
 	} else if (symbol[0] === "h") {
 		line(0.8, 0.8, 0.8, -0.8);
 		line(-0.8, 0.8, -0.8, -0.8);
 		normalVowelLine();
 	} else if (symbol[0] === "m") {
-		context.moveTo(0, 0.8);
-		context.lineTo(0, 0);
+		line(0, 0.8, 0, 0);
 		context.lineTo(0.8, 0);
 		line(0.8, 0.8, 0.8, -0.8);
-		if (symbol[1] === "i") {
-			context.moveTo(0, 0.8);
-			context.lineTo(-0.8, 0.8);
-		} else normalVowelLine();
+		if (symbol[1] === "i") line(0, 0.8, -0.8, 0.8);
+		else                   normalVowelLine();
 	} else if (symbol[0] === "n") {
-		context.moveTo(0.8, 0.8);
-		context.lineTo(0.8, 0);
+		line(0.8, 0.8, 0.8, 0);
 		context.lineTo(0, 0);
 		line(0, 0.8, 0, -0.8);
-		if (symbol[1] === "i") {
-			context.moveTo(0, 0.8);
-			context.lineTo(-0.8, 0.8);
-		} else normalVowelLine();
+		if (symbol[1] === "i") line(0, 0.8, -0.8, 0.8);
+		else                   normalVowelLine();
 	} else if (symbol[0] === "g") {
-		context.moveTo(0, 0.8);
-		context.lineTo(0, 0);
+		line(0, 0.8, 0, 0);
 		context.lineTo(-0.8, 0);
 		line(-0.8, 0.8, -0.8, -0.8);
-		if (symbol[1] === "i") {
-			context.moveTo(0, 0.8);
-			context.lineTo(0.8, 0.8);
-		} else normalVowelLine();
+		if (symbol[1] === "i") line(0, 0.8, 0.8, 0.8);
+		else                   normalVowelLine();
 	} else if (symbol[0] === "w") {
-		context.moveTo(0.8, 0.8);
-		context.lineTo(0.8, 0);
+		line(0.8, 0.8, 0.8, 0);
 		context.lineTo(-0.8, 0);
 		context.lineTo(-0.8, -0.8);
-		if (symbol[1] === "i") {
-			context.moveTo(0, 0.8);
-			context.lineTo(0.8, 0.8);
-		} else normalVowelLine();
+		if (symbol[1] === "i") line(0, 0.8, 0.8, 0.8);
+		else                   normalVowelLine();
 	} else if (symbol[0] === "l") {
-		context.moveTo(0.8, 0.8);
-		context.lineTo(0.8, 0);
+		line(0.8, 0.8, 0.8, 0);
 		context.lineTo(0, 0);
 		context.lineTo(0, -0.8);
 		normalVowelLine();
 	} else if (symbol[0] === "j") {
-		context.moveTo(-0.8, 0.8);
-		context.lineTo(-0.8, 0);
+		line(-0.8, 0.8, -0.8, 0);
 		context.lineTo(0, 0);
 		context.lineTo(0, -0.8);
 		normalVowelLine();
@@ -168,15 +146,14 @@ window.addEventListener("resize", () => {
 			else throw "duplicate word in sorter: " + a + ", " + b;
 		};
 
-		const createChild = (parent, type) => parent.appendChild(document.createElement(type));
-
+		const dictionary = document.getElementById("dictionary");
 		Object.keys(defs).sort(wordSorter).forEach(r => {
-			const tr = createChild(document.getElementById("dictionary"), "tr");
-			createChild(tr, "td").innerText = r;
-			const td = createChild(tr, "td");
+			const tr = dictionary.appendChild(document.createElement("tr"));
+			tr.appendChild(document.createElement("td")).innerText = r;
+			const td = tr.appendChild(document.createElement("td"));
 			for (const symbol of r.match(/.{1,2}/g))
-				drawSymbol(getContext(createChild(td, "canvas")), symbol);
-			createChild(tr, "td").innerHTML = defs[r];
+				drawSymbol(getContext(td.appendChild(document.createElement("canvas"))), symbol);
+			tr.appendChild(document.createElement("td")).innerHTML = defs[r];
 		});
 	}
 
@@ -184,35 +161,29 @@ window.addEventListener("resize", () => {
 
 	{
 		const context = getContext(document.getElementById("magic"));
-		const nodes = Array(6).fill(0).map((_, i) => ({
-			symbol: elements[i],
-			color: colors[i],
-			x: 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2),
-			y: 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2),
-		}));
-		context.strokeStyle = "#222";
-		for (let i = 0; i < nodes.length; ++i) {
-			for (let j = i + 1; j < nodes.length; ++j) {
-				if ((i === 0 && j === 3) || (i === 1 && j === 5) || (i === 2 && j === 4))
-					 context.lineWidth = 0.05;
-				else context.lineWidth = 0.03;
+		for (let i = 0; i < 6; ++i) {
+			const x = 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2);
+			const y = 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2);
+			context.strokeStyle = "#222";
+			for (let j = i + 1; j < 6; ++j) {
+				const x2 = 0.79 * Math.cos(j * Math.PI / 3 + Math.PI / 2);
+				const y2 = 0.79 * Math.sin(j * Math.PI / 3 + Math.PI / 2);
+				context.lineWidth = i + j === 6 || i === 0 && j === 3? 0.05: 0.03;
 				context.beginPath();
-				context.moveTo(nodes[i].x, nodes[i].y);
-				context.lineTo(nodes[j].x, nodes[j].y);
+				context.moveTo(x, y);
+				context.lineTo(x2, y2);
 				context.stroke();
 			}
-		}
-		context.lineWidth = 0.2;
-		context.strokeStyle = "#111";
-		for (const node of nodes) {
-			context.fillStyle = node.color;
-			context.beginPath();
-			context.arc(node.x, node.y, 0.2, 0, Math.PI * 2);
-			context.fill();
+			context.lineWidth = 0.2;
+			context.strokeStyle = "#111";
 			context.save();
-			context.translate(node.x, node.y);
+			context.translate(x, y);
 			context.scale(0.1, 0.1);
-			drawSymbol(context, node.symbol, false);
+			context.fillStyle = ["#E33", "#3E3", "#333", "#33E", "#EEE", "#EE3"][i];
+			context.beginPath();
+			context.arc(0, 0, 2, 0, Math.PI * 2);
+			context.fill();
+			drawSymbol(context, elements[i], false);
 			context.restore();
 		}
 	}
