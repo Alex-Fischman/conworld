@@ -9,7 +9,7 @@
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, man, moon, mountain, 
 //	path, round, seed, sun, tree
 
-// questions: who, what, where, when, why, how
+// questions: where, when, why, how
 // sex: male, female
 // animacy: alive, dead, kill, die
 // time: past, present, future
@@ -20,21 +20,26 @@ const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "important",
 	"tu": "and", "tuku": "separate",
-	"ma": "parent", "maku": "child",
-	"ni": "fire, hot", "niku": "cold", "niwa": "smoke", "niga": "radiation",
-	"na": "it", "nasi": "them", "napi": "this", "napiku": "that, other",
-	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
+	"ka": "earth", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
-	"gi": "I", "giku": "you", "gisi": "we",
-	"ga": "light, color", "gafa": "black", "gawa": "white", "gani": "red", "gaka": "green",
-		"gaga": "yellow", "gasu": "blue",
 	"fa": "void", "faku": "chaos",
 	"fu": "<a href=\"#Magic\">magic</a>",
-	"wa": "air", "wawu": "wind", "wani": "lightning", "wasu": "cloud",
-	"wu": "go",
 	"si": "many, <a href=\"#Numbers\">number</a>", "siku": "only", "sipi": "all",
 		"sipina": "everything",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain",
+	"ma": "parent", "maku": "child",
+	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
+	"na": "it", "nasi": "them", "napi": "this", "napiku": "that",
+	"gi": "I", "giku": "you", "gisi": "we",
+	"ga": "light",
+	"wa": "air", "wawu": "wind", "wasu": "cloud",
+	"wu": "go",
+	"li": "question", "lina": "what", "ligi": "who",
+
+	"gani": "red", "gaka": "green", "gafa": "black",
+	"gasu": "blue", "gawa": "white", "gaga": "yellow",
+	"sini": "zero", "sika": "one", "sifa": "two",
+	"sisu": "three", "siwa": "four", "siga": "five",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
@@ -139,10 +144,17 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 	for (let i = 0; i < 6; ++i) {
 		const tr = createChild(orthography, "tr");
 		createChild(tr, "td").innerText = [..."ptkfsh"][i];
-		for (let j = 0; j < 6; ++j) drawSymbol(
-			getContext(createChild(createChild(tr, "td"), "canvas")),
-			consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3],
-		);
+		for (let j = 0; j < 6; ++j) {
+			const context = getContext(createChild(createChild(tr, "td"), "canvas"));
+			const root = consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3];
+			if (!defs.hasOwnProperty(root)) {
+				context.fillStyle = "#E33";
+				context.beginPath();
+				context.arc(0, 0, 1, 0, Math.PI * 2);
+				context.fill();
+			}
+			drawSymbol(context, root);
+		}
 		createChild(tr, "td").innerText = [..."mngwlj"][i];
 	}
 }
@@ -159,9 +171,8 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 		else throw "duplicate word in sorter: " + a + ", " + b;
 	};
 
-	const dictionary = document.getElementById("dictionary");
 	Object.keys(defs).sort(wordSorter).forEach(r => {
-		const tr = createChild(dictionary, "tr");
+		const tr = createChild(document.getElementById("dictionary"), "tr");
 		createChild(tr, "td").innerText = r;
 		const td = createChild(tr, "td");
 		for (const symbol of r.match(/.{1,2}/g))
@@ -171,9 +182,8 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 }
 
 {
-	const digits = document.getElementById("digits");
-	const a = createChild(digits, "tr");
-	const b = createChild(digits, "tr");
+	const a = createChild(document.getElementById("digits"), "tr");
+	const b = createChild(document.getElementById("digits"), "tr");
 	for (let i = 0; i < 6; ++i) {
 		createChild(a, "td").innerText = i;
 		drawSymbol(getContext(createChild(createChild(b, "td"), "canvas")), elements[i]);
@@ -209,11 +219,7 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 	}
 }
 
-{
-	const humans = document.getElementById("humans");
-	const demons = document.getElementById("demons");
-	for (let i = 0; i < 6; ++i) drawSymbol(
-		getContext(createChild(i < 3? humans: demons, "canvas")),
-		elements[(i * 2 + 1) % 7]
-	);
-}
+for (let i = 0; i < 6; ++i) drawSymbol(
+	getContext(createChild(document.getElementById(i < 3? "humans": "demons"), "canvas")),
+	elements[(i * 2 + 1) % 7]
+);
