@@ -57,3 +57,7 @@ canvas {
 #Dictionary td:nth-child(3) {
 	width: 50%;
 }
+
+#Creatures td canvas {
+	width: 33%;
+}

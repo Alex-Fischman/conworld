@@ -16,7 +16,6 @@
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
-const roots = consonants.flatMap(c => vowels.map(v => c + v));
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "important",
@@ -38,11 +37,13 @@ const defs = {
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain",
 };
 
+const createChild = (parent, type) => parent.appendChild(document.createElement(type));
+
 const getContext = canvas => {
 	const context = canvas.getContext("2d");
-	const {width: w, height: h} = context.canvas.getBoundingClientRect();
-	context.canvas.width = w;
-	context.canvas.height = h;
+	const {width: w, height: h} = canvas.getBoundingClientRect();
+	canvas.width = w;
+	canvas.height = h;
 	context.fillStyle = "#111";
 	context.fillRect(0, 0, w, h);
 	context.setTransform(new DOMMatrix(w > h? 
@@ -131,64 +132,88 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 	context.stroke();
 };
 
-window.addEventListener("resize", () => {
-	for (const r of roots) drawSymbol(getContext(document.getElementById(r)), r);
-
-	{
-		const wordSorter = (a, b) => {
-			const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
-			const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
-			if (c !== 0) return c;
-			else if (v !== 0) return v;
-			else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
-			else if (a.length > 2) return 1;
-			else if (b.length > 2) return -1;
-			else throw "duplicate word in sorter: " + a + ", " + b;
-		};
-
-		const dictionary = document.getElementById("dictionary");
-		Object.keys(defs).sort(wordSorter).forEach(r => {
-			const tr = dictionary.appendChild(document.createElement("tr"));
-			tr.appendChild(document.createElement("td")).innerText = r;
-			const td = tr.appendChild(document.createElement("td"));
-			for (const symbol of r.match(/.{1,2}/g))
-				drawSymbol(getContext(td.appendChild(document.createElement("canvas"))), symbol);
-			tr.appendChild(document.createElement("td")).innerHTML = defs[r];
-		});
+{
+	const orthography = document.getElementById("orthography");
+	const header = createChild(orthography, "tr");
+	for (const vowel of [..." iauiau "]) createChild(header, "td").innerText = vowel;
+	for (let i = 0; i < 6; ++i) {
+		const tr = createChild(orthography, "tr");
+		createChild(tr, "td").innerText = [..."ptkfsh"][i];
+		for (let j = 0; j < 6; ++j) drawSymbol(
+			getContext(createChild(createChild(tr, "td"), "canvas")),
+			consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3],
+		);
+		createChild(tr, "td").innerText = [..."mngwlj"][i];
 	}
+}
 
-	for (const i in elements) drawSymbol(getContext(document.getElementById(i)), elements[i]);
+{
+	const wordSorter = (a, b) => {
+		const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
+		const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
+		if (c !== 0) return c;
+		else if (v !== 0) return v;
+		else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
+		else if (a.length > 2) return 1;
+		else if (b.length > 2) return -1;
+		else throw "duplicate word in sorter: " + a + ", " + b;
+	};
 
-	{
-		const context = getContext(document.getElementById("magic"));
-		for (let i = 0; i < 6; ++i) {
-			const x = 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2);
-			const y = 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2);
-			context.strokeStyle = "#222";
-			for (let j = i + 1; j < 6; ++j) {
-				const x2 = 0.79 * Math.cos(j * Math.PI / 3 + Math.PI / 2);
-				const y2 = 0.79 * Math.sin(j * Math.PI / 3 + Math.PI / 2);
-				context.lineWidth = i + j === 6 || i === 0 && j === 3? 0.05: 0.03;
-				context.beginPath();
-				context.moveTo(x, y);
-				context.lineTo(x2, y2);
-				context.stroke();
-			}
-			context.lineWidth = 0.2;
-			context.strokeStyle = "#111";
-			context.save();
-			context.translate(x, y);
-			context.scale(0.1, 0.1);
-			context.fillStyle = ["#E33", "#3E3", "#333", "#33E", "#EEE", "#EE3"][i];
+	const dictionary = document.getElementById("dictionary");
+	Object.keys(defs).sort(wordSorter).forEach(r => {
+		const tr = createChild(dictionary, "tr");
+		createChild(tr, "td").innerText = r;
+		const td = createChild(tr, "td");
+		for (const symbol of r.match(/.{1,2}/g))
+			drawSymbol(getContext(createChild(td, "canvas")), symbol);
+		createChild(tr, "td").innerHTML = defs[r];
+	});
+}
+
+{
+	const digits = document.getElementById("digits");
+	const a = createChild(digits, "tr");
+	const b = createChild(digits, "tr");
+	for (let i = 0; i < 6; ++i) {
+		createChild(a, "td").innerText = i;
+		drawSymbol(getContext(createChild(createChild(b, "td"), "canvas")), elements[i]);
+	}
+}
+
+{
+	const context = getContext(document.getElementById("magic"));
+	for (let i = 0; i < 6; ++i) {
+		const x = 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2);
+		const y = 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2);
+		context.strokeStyle = "#222";
+		for (let j = i + 1; j < 6; ++j) {
+			const x2 = 0.79 * Math.cos(j * Math.PI / 3 + Math.PI / 2);
+			const y2 = 0.79 * Math.sin(j * Math.PI / 3 + Math.PI / 2);
+			context.lineWidth = i + j === 6 || i === 0 && j === 3? 0.05: 0.03;
 			context.beginPath();
-			context.arc(0, 0, 2, 0, Math.PI * 2);
-			context.fill();
-			drawSymbol(context, elements[i], false);
-			context.restore();
+			context.moveTo(x, y);
+			context.lineTo(x2, y2);
+			context.stroke();
 		}
+		context.lineWidth = 0.2;
+		context.strokeStyle = "#111";
+		context.save();
+		context.translate(x, y);
+		context.scale(0.1, 0.1);
+		context.fillStyle = ["#E33", "#3E3", "#333", "#33E", "#EEE", "#EE3"][i];
+		context.beginPath();
+		context.arc(0, 0, 2, 0, Math.PI * 2);
+		context.fill();
+		drawSymbol(context, elements[i], false);
+		context.restore();
 	}
+}
 
-	for (const e of elements) drawSymbol(getContext(document.getElementById(e + "0")), e);
-});
-
-window.dispatchEvent(new Event("resize"));
+{
+	const humans = document.getElementById("humans");
+	const demons = document.getElementById("demons");
+	for (let i = 0; i < 6; ++i) drawSymbol(
+		getContext(createChild(i < 3? humans: demons, "canvas")),
+		elements[(i * 2 + 1) % 7]
+	);
+}

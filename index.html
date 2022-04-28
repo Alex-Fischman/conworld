@@ -28,82 +28,34 @@
 		<div id="Grammar"><h1>Grammar</h1>
 			<p>All words are a list of roots concatenated together, where the first root specifies the meaning and the rest of them modify the first one. This eliminates the difference between nouns and adjectives. Roots used as modifiers act as suffixes. For example, "different" would be "same not".<br>There is an implicit "to be" in every sentence. "To change" is "to be different", "to have" is "to be possessed", "to give" is "to be possessed different(ly)", etc. This eliminates the difference between nouns and verbs. The sentence structure is best analyzed as VSO; the word that modifies "to be" comes at the beginning.</p>
 		</div>
-		<div id="Orthography"><h1>Orthography</h1>
-			<table>
-				<tr>
-					<td></td><td>i</td><td>a</td><td>u</td><td>i</td><td>a</td><td>u</td><td></td>
-				</tr>
-				<tr>
-					<td>p</td>
-					<td><canvas id="pi"></canvas></td><td><canvas id="pa"></canvas></td>
-					<td><canvas id="pu"></canvas></td><td><canvas id="mi"></canvas></td>
-					<td><canvas id="ma"></canvas></td><td><canvas id="mu"></canvas></td>
-				<td>m</td></tr>
-				<tr><td>t</td>
-					<td><canvas id="ti"></canvas></td><td><canvas id="ta"></canvas></td>
-					<td><canvas id="tu"></canvas></td><td><canvas id="ni"></canvas></td>
-					<td><canvas id="na"></canvas></td><td><canvas id="nu"></canvas></td>
-				<td>n</td></tr>
-				<tr><td>k</td>
-					<td><canvas id="ki"></canvas></td><td><canvas id="ka"></canvas></td>
-					<td><canvas id="ku"></canvas></td><td><canvas id="gi"></canvas></td>
-					<td><canvas id="ga"></canvas></td><td><canvas id="gu"></canvas></td>
-				<td>g</td></tr>
-				<tr><td>f</td>
-					<td><canvas id="fi"></canvas></td><td><canvas id="fa"></canvas></td>
-					<td><canvas id="fu"></canvas></td><td><canvas id="wi"></canvas></td>
-					<td><canvas id="wa"></canvas></td><td><canvas id="wu"></canvas></td>
-				<td>m</td></tr>
-				<tr><td>s</td>
-					<td><canvas id="si"></canvas></td><td><canvas id="sa"></canvas></td>
-					<td><canvas id="su"></canvas></td><td><canvas id="li"></canvas></td>
-					<td><canvas id="la"></canvas></td><td><canvas id="lu"></canvas></td>
-				<td>l</td></tr>
-				<tr><td>h</td>
-					<td><canvas id="hi"></canvas></td><td><canvas id="ha"></canvas></td>
-					<td><canvas id="hu"></canvas></td><td><canvas id="ji"></canvas></td>
-					<td><canvas id="ja"></canvas></td><td><canvas id="ju"></canvas></td>
-				<td>j</td></tr>
-			</table>
-		</div>
+		<div id="Orthography"><h1>Orthography</h1><table id="orthography"></table></div>
 		<div id="Dictionary"><h1>Dictionary</h1><table id="dictionary"></table></div>
 		<div id="Numbers"><h1>Numbers</h1>
+			<table id="digits"></table>
 			<p>All numbers start with si, which is followed by their base-6 representation, with each digit replaced by an element.</p>
-			<table id="digits-table">
-				<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-				<tr>
-					<td><canvas id="0"></canvas></td><td><canvas id="1"></canvas></td>
-					<td><canvas id="2"></canvas></td><td><canvas id="3"></canvas></td>
-					<td><canvas id="4"></canvas></td><td><canvas id="5"></canvas></td>
-				</tr>
-			</table>
 		</div>
 		<div id="Magic"><h1>Magic</h1>
 			<canvas id="magic"></canvas>
-			<p>The magic system is built around creating things.<br>Mana (life energy) is the max power of spells that can be cast.<br>Mana recharges quickly, cooldown rather than spell slot.</p>
+			<p>All living creatures can hold a certain amount of mana. All thinking creatures can use mana to cast spells. However, if a creature runs out of mana, it dies. Different creatures will have naturally varying maximum mana pools and regeneration rates, but the differences aren't signifigant.</p>
 		</div>
 		<div id="Creatures"><h1>Creatures</h1>
-			<table id="creatures-table">
-				<tr><td colspan=3>Humans</td><td colspan=3>Demons</td></tr>
+			<table id="creatures">
+				<tr><td>Humans</td><td>Demons</td></tr>
+				<tr><td id="humans"></td><td id="demons"></td></tr>
 				<tr>
-					<td><canvas id="ka0"></canvas></td><td><canvas id="ga0"></canvas></td>
-					<td><canvas id="su0"></canvas></td><td><canvas id="fa0"></canvas></td>
-					<td><canvas id="ni0"></canvas></td><td><canvas id="wa0"></canvas></td>
+					<td>Independent tribes, separated by water or by distance</td>
+					<td>Share memories with others on the same planet during the day</td>
 				</tr>
 				<tr>
-					<td colspan=3>Independent tribes, separated by water or by distance</td>
-					<td colspan=3>Share memories with others on the same planet during the day</td>
+					<td>Planets of earth around stars of light</td>
+					<td>Planets of air around stars of void</td>
 				</tr>
 				<tr>
-					<td colspan=3>Planets of earth around stars of light</td>
-					<td colspan=3>Planets of air around stars of void</td>
+					<td>Day comes from orbit of star</td>
+					<td>Day comes from merging of creatures</td>
 				</tr>
-				<tr>
-					<td colspan=3>Day comes from orbit of star</td>
-					<td colspan=3>Day comes from merging of creatures</td>
-				</tr>
-				<tr><td colspan=3>Human shaped</td><td colspan=3>Comet shaped</td></tr>
-				<tr><td colspan=3>Sexual</td><td colspan=3>Asexual</td></tr>
+				<tr><td>Human shaped</td><td>Comet shaped</td></tr>
+				<tr><td>Sexual</td><td>Asexual</td></tr>
 			</table>
 		</div>
 		<script src="index.js"></script>
