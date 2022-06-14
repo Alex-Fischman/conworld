@@ -58,11 +58,11 @@ const getContext = canvas => {
 	return context;
 };
 
-const drawSymbol = (context, symbol, defaultColor = true) => {
+const drawSymbol = (context, symbol, color = "#EEE") => {
 	context.lineCap = "round";
 	context.lineJoin = "round";
 	context.lineWidth = 0.2;
-	if (defaultColor) context.strokeStyle = "#EEE";
+	context.strokeStyle = color;
 
 	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
 	const normalVowelLine = () => {
@@ -145,15 +145,9 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 		const tr = createChild(orthography, "tr");
 		createChild(tr, "td").innerText = [..."ptkfsh"][i];
 		for (let j = 0; j < 6; ++j) {
+			const word = consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3];
 			const context = getContext(createChild(createChild(tr, "td"), "canvas"));
-			const root = consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3];
-			if (!defs.hasOwnProperty(root)) {
-				context.fillStyle = "#E33";
-				context.beginPath();
-				context.arc(0, 0, 1, 0, Math.PI * 2);
-				context.fill();
-			}
-			drawSymbol(context, root);
+			drawSymbol(context, word, defs.hasOwnProperty(word) ? "#EEE" : "#E11");
 		}
 		createChild(tr, "td").innerText = [..."mngwlj"][i];
 	}
@@ -206,7 +200,6 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 			context.stroke();
 		}
 		context.lineWidth = 0.2;
-		context.strokeStyle = "#111";
 		context.save();
 		context.translate(x, y);
 		context.scale(0.1, 0.1);
@@ -214,7 +207,7 @@ const drawSymbol = (context, symbol, defaultColor = true) => {
 		context.beginPath();
 		context.arc(0, 0, 2, 0, Math.PI * 2);
 		context.fill();
-		drawSymbol(context, elements[i], false);
+		drawSymbol(context, elements[i], "#111");
 		context.restore();
 	}
 }
