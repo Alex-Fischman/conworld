@@ -32,7 +32,7 @@ const defs = {
 	"na": "it", "nasi": "them", "napi": "this", "napiku": "that",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light",
-	"wa": "air", "wawu": "wind", "wasu": "cloud",
+	"wa": "air", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go",
 	"li": "question", "lina": "what", "ligi": "who",
 

@@ -3,8 +3,6 @@ html {
 	background-color: #111;
 	color: #EEE;
 	font-size: 2.5vw;
-	scroll-behavior: smooth;
-	scroll-padding: 25vh;
 }
 
 body {
