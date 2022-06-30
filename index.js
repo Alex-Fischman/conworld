@@ -26,7 +26,7 @@ const defs = {
 	"fu": "<a href=\"#Magic\">magic</a>",
 	"si": "many, <a href=\"#Numbers\">number</a>", "siku": "only", "sipi": "all",
 		"sipina": "everything",
-	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain",
+	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "current, river", "su  gani": "blood",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it", "nasi": "them", "napi": "this", "napiku": "that",
@@ -133,6 +133,7 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 		context.lineTo(0, 0);
 		context.lineTo(0, -0.8);
 		normalVowelLine();
+	} else if (symbol[0] === " ") {
 	} else throw "unknown consonant in symbol: " + symbol;
 	context.stroke();
 };

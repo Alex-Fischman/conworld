@@ -42,22 +42,23 @@ h1, h2, p {
 	border-right: 1px solid;
 }
 
-#Dictionary td {
-	width: 25%;
+#Dictionary td:nth-child(1) {
+	width: 20%;
 }
 
 #Dictionary td:nth-child(2) {
+	width: 30%;
 	text-align: left;
-}
-
-#Dictionary canvas {
-	width: 25%;
-	aspect-ratio: 1;
-	margin-right: 5%;
 }
 
 #Dictionary td:nth-child(3) {
 	width: 50%;
+}
+
+#Dictionary canvas {
+	width: 20%;
+	aspect-ratio: 1;
+	margin-right: 5%;
 }
 
 #Creatures td canvas {
