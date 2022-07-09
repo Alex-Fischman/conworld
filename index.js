@@ -6,7 +6,7 @@
 //	to fall, to cry, to tie, to see, to crush/grind, to sit, to sleep, to walk
 // root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
-//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, man, moon, mountain, 
+//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain, 
 //	path, round, seed, sun, tree
 
 // questions: where, when, why, how
@@ -26,7 +26,8 @@ const defs = {
 	"fu": "<a href=\"#Magic\">magic</a>",
 	"si": "many, <a href=\"#Numbers\">number</a>", "siku": "only", "sipi": "all",
 		"sipina": "everything",
-	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "current, river", "su  gani": "blood",
+	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "current, river",
+	"su  gani": "blood",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it", "nasi": "them", "napi": "this", "napiku": "that",
