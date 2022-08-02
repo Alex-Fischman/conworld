@@ -32,12 +32,6 @@ h1, h2, p {
 	margin-bottom: 1vh;
 }
 
-#Contents {
-	position: fixed;
-	top: 1vw;
-	left: 1vw;
-}
-
 #Orthography td:nth-child(4) {
 	border-right: 1px solid;
 }
@@ -59,8 +53,4 @@ h1, h2, p {
 	width: 20%;
 	aspect-ratio: 1;
 	margin-right: 5%;
-}
-
-#Creatures td canvas {
-	width: 33%;
 }
