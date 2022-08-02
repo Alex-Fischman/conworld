@@ -213,8 +213,3 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 		context.restore();
 	}
 }
-
-for (let i = 0; i < 6; ++i) drawSymbol(
-	getContext(createChild(document.getElementById(i < 3? "humans": "demons"), "canvas")),
-	elements[(i * 2 + 1) % 7]
-);
