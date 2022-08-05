@@ -9,10 +9,10 @@
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain, 
 //	path, round, seed, sun, tree
 
-// questions: where, when, why, how
+// questions: why, how
 // sex: male, female
 // animacy: alive, dead, kill, die
-// time: past, present, future, day=time-light=lighttime
+// time: past, future
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -33,9 +33,11 @@ const defs = {
 	"na": "it", "nasi": "them", "napi": "this", "napiku": "that",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light",
+	"wi": "space", "wipi": "here",
 	"wa": "air", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go",
-	"li": "question", "lina": "what", "ligi": "who",
+	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when",
+	"ji": "time", "jipi": "now", "jiga": "day", "jigapi": "today",
 
 	"gani": "red", "gaka": "green", "gafa": "black",
 	"gasu": "blue", "gawa": "white", "gaga": "yellow",
