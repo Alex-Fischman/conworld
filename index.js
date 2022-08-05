@@ -24,7 +24,7 @@ const defs = {
 	"ku": "not", "kuna": "nothing",
 	"fa": "void", "faku": "chaos",
 	"fu": "<a href=\"#Magic\">magic</a>",
-	"si": "<a href=\"#Numbers\">number</a>", "siku": "only", "sipi": "all", "sipina": "everything",
+	"si": "many", "siku": "only", "sipi": "all", "sipina": "everything",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
 	"ma": "parent", "maku": "child",
@@ -40,8 +40,6 @@ const defs = {
 
 	"gani": "red", "gaka": "green", "gafa": "black",
 	"gasu": "blue", "gawa": "white", "gaga": "yellow",
-	"sini": "zero", "sika": "one", "sifa": "two",
-	"sisu": "three", "siwa": "four", "siga": "five",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
@@ -176,15 +174,6 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 			drawSymbol(getContext(createChild(td, "canvas")), symbol);
 		createChild(tr, "td").innerHTML = defs[r];
 	});
-}
-
-{
-	const a = createChild(document.getElementById("digits"), "tr");
-	const b = createChild(document.getElementById("digits"), "tr");
-	for (let i = 0; i < 6; ++i) {
-		createChild(a, "td").innerText = i;
-		drawSymbol(getContext(createChild(createChild(b, "td"), "canvas")), elements[i]);
-	}
 }
 
 {
