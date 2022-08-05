@@ -12,7 +12,7 @@
 // questions: where, when, why, how
 // sex: male, female
 // animacy: alive, dead, kill, die
-// time: past, present, future
+// time: past, present, future, day=time-light=lighttime
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
