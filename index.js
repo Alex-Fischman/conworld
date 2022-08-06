@@ -30,15 +30,12 @@ const defs = {
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it", "nasi": "them", "naka": "this", "nakaku": "that",
 	"gi": "I", "giku": "you", "gisi": "we",
-	"ga": "light",
+	"ga": "light", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", "gawa": "white", "gaga": "yellow",
 	"wi": "space", "wika": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when",
 	"ji": "time", "jika": "now", "jiga": "day", "jigaka": "today",
-
-	"gani": "red", "gaka": "green", "gafa": "black",
-	"gasu": "blue", "gawa": "white", "gaga": "yellow",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
