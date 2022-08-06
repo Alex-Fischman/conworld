@@ -33,7 +33,7 @@ const defs = {
 	"ga": "light", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", "gawa": "white", "gaga": "yellow",
 	"wi": "space", "wika": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
-	"wu": "go",
+	"wu": "go", "wuwa": "fly",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when",
 	"ji": "time", "jika": "now", "jiga": "day", "jigaka": "today",
 };
