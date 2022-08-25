@@ -6,7 +6,7 @@
 //	to fall, to cry, to tie, to see, to crush/grind, to sit, to sleep, to walk
 // root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
-//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain, 
+//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
 //	path, round, seed, sun, tree
 
 // questions: why, how
@@ -30,10 +30,11 @@ const defs = {
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it", "nasi": "them", "naka": "this", "nakaku": "that",
 	"gi": "I", "giku": "you", "gisi": "we",
-	"ga": "light", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", "gawa": "white", "gaga": "yellow",
+	"ga": "light", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", 
+		"gawa": "white", "gaga": "yellow",
 	"wi": "space", "wika": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
-	"wu": "go", "wuwa": "fly",
+	"wu": "go", "wuwa": "fly", "wuku": "stop",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when",
 	"ji": "time", "jika": "now", "jiga": "day", "jigaka": "today",
 };
@@ -51,15 +52,14 @@ const getContext = canvas => {
 		[h / 2, 0, 0, -h / 2, h / 2 + (w - h) / 2, h / 2]: 
 		[w / 2, 0, 0, -w / 2, w / 2, w / 2 + (h - w) / 2]
 	));
+	context.lineCap = "round";
+	context.lineJoin = "round";
 	return context;
 };
 
 const drawSymbol = (context, symbol, color = "#EEE") => {
-	context.lineCap = "round";
-	context.lineJoin = "round";
 	context.lineWidth = 0.2;
 	context.strokeStyle = color;
-
 	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
 	const normalVowelLine = () => {
 		if (symbol[1] === "i") line(0.8, 0.8, -0.8, 0.8);
@@ -67,7 +67,6 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 		else if (symbol[1] === "u") line(0.8, 0, -0.8, 0)
 		else throw "unknown vowel in symbol: " + symbol;
 	};
-
 	context.beginPath();
 	if (symbol[0] === "p") {
 		line(0.8, 0.8, 0.8, -0.8);

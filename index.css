@@ -24,16 +24,17 @@ a {
 	color: inherit;
 }
 
-canvas {
-	width: 100%;
-}
-
 h1, h2, p {
 	margin-bottom: 1vh;
 }
 
 #Orthography td:nth-child(4) {
 	border-right: 1px solid;
+}
+
+#Orthography canvas {
+	width: 50%;
+	aspect-ratio: 1;
 }
 
 #Dictionary td:nth-child(1) {
@@ -52,5 +53,10 @@ h1, h2, p {
 #Dictionary canvas {
 	width: 20%;
 	aspect-ratio: 1;
-	margin-right: 5%;
+	margin-right: 2%;
+}
+
+#Magic canvas {
+	width: 100%;
+	aspect-ratio: 1;
 }
