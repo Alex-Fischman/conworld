@@ -3,7 +3,7 @@
 //	finger/toenail, head, heart, 
 // to come, to do, to make, to say, to hit, to eat/drink, to stand, to bite, 
 //	to give, to know, to laugh, to hear, to hide, to suck, to carry, to take, to blow, to run, 
-//	to fall, to cry, to tie, to see, to crush/grind, to sit, to sleep, to walk
+//	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
 // root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
@@ -28,9 +28,9 @@ const defs = {
 	"su  gani": "blood",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
-	"na": "it", "nasi": "them", "naka": "this", "nakaku": "that",
+	"na": "it, to be", "nasi": "them", "naka": "this", "nakaku": "that",
 	"gi": "I", "giku": "you", "gisi": "we",
-	"ga": "light", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", 
+	"ga": "light, to see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", 
 		"gawa": "white", "gaga": "yellow",
 	"wi": "space", "wika": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
