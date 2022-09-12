@@ -1,8 +1,8 @@
 // nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
 //	leg/foot, horn, navel, back, egg, knee, liver, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
-// to come, to do, to make, to say, to hit, to eat/drink, to stand, to bite, 
-//	to give, to know, to laugh, to hear, to hide, to suck, to carry, to take, to blow, to run, 
+// to come, to say, to hit, to eat/drink, to stand, to bite, 
+//	to give, to know, to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
 // root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
@@ -13,11 +13,13 @@
 // sex: male, female
 // animacy: alive, dead, kill, die
 // time: past, future
+// verbs: to do
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
+	"ta": "creation", "taku": "destruction",
 	"tu": "and", "tuku": "separate",
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
