@@ -13,7 +13,8 @@
 // sex: male, female
 // animacy: alive, dead, kill, die
 // time: past, future
-// verbs: to do
+// to do
+// language, to talk
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -25,7 +26,7 @@ const defs = {
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
 	"fa": "void, order", "faku": "chaos",
-	"fu": "<a href=\"#Magic\">magic</a>", // language, to talk?
+	"fu": "<a href=\"#Magic\">magic</a>, fundamental",
 	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
