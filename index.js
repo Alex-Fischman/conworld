@@ -60,7 +60,10 @@ const getContext = canvas => {
 const drawSymbol = (context, symbol, color = "#EEE") => {
 	context.lineWidth = 0.2;
 	context.strokeStyle = color;
-	const line = (a, b, c, d) => { context.moveTo(a, b); context.lineTo(c, d); };
+	const line = (a, b, ...rest) => {
+		context.moveTo(a, b);
+		for (let i = 0; i < rest.length; i += 2) context.lineTo(rest[i], rest[i + 1]);
+	};
 	const normalVowelLine = () => {
 		if (symbol[1] === "i") line(0.8, 0.8, -0.8, 0.8);
 		else if (symbol[1] === "a") line(0.8, -0.8, -0.8, -0.8);
@@ -95,38 +98,26 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 		line(-0.8, 0.8, -0.8, -0.8);
 		normalVowelLine();
 	} else if (symbol[0] === "m") {
-		line(0, 0.8, 0, 0);
-		context.lineTo(0.8, 0);
-		line(0.8, 0.8, 0.8, -0.8);
+		line(0, 0.8, 0, 0, 0.8, 0, 0.8, 0.8, 0.8, -0.8);
 		if (symbol[1] === "i") line(0, 0.8, -0.8, 0.8);
 		else                   normalVowelLine();
 	} else if (symbol[0] === "n") {
-		line(0.8, 0.8, 0.8, 0);
-		context.lineTo(0, 0);
-		line(0, 0.8, 0, -0.8);
+		line(0.8, 0.8, 0.8, 0, 0, 0, 0, 0.8, 0, -0.8);
 		if (symbol[1] === "i") line(0, 0.8, -0.8, 0.8);
 		else                   normalVowelLine();
 	} else if (symbol[0] === "g") {
-		line(0, 0.8, 0, 0);
-		context.lineTo(-0.8, 0);
-		line(-0.8, 0.8, -0.8, -0.8);
+		line(0, 0.8, 0, 0, -0.8, 0, -0.8, 0.8, -0.8, -0.8);
 		if (symbol[1] === "i") line(0, 0.8, 0.8, 0.8);
 		else                   normalVowelLine();
 	} else if (symbol[0] === "w") {
-		line(0.8, 0.8, 0.8, 0);
-		context.lineTo(-0.8, 0);
-		context.lineTo(-0.8, -0.8);
+		line(0.8, 0.8, 0.8, 0, -0.8, 0, -0.8, -0.8);
 		if (symbol[1] === "i") line(0, 0.8, 0.8, 0.8);
 		else                   normalVowelLine();
 	} else if (symbol[0] === "l") {
-		line(0.8, 0.8, 0.8, 0);
-		context.lineTo(0, 0);
-		context.lineTo(0, -0.8);
+		line(0.8, 0.8, 0.8, 0, 0, 0, 0, -0.8);
 		normalVowelLine();
 	} else if (symbol[0] === "j") {
-		line(-0.8, 0.8, -0.8, 0);
-		context.lineTo(0, 0);
-		context.lineTo(0, -0.8);
+		line(-0.8, 0.8, -0.8, 0, 0, 0, 0, -0.8);
 		normalVowelLine();
 	} else if (symbol[0] === " ") {
 	} else throw "unknown consonant in symbol: " + symbol;
