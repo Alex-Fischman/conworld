@@ -21,24 +21,25 @@ const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"ta": "creation", "taku": "destruction",
 	"tu": "and", "tuku": "separate",
+	"ki": "specific", "kiku": "general",
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
 	"fa": "void, order", "faku": "chaos",
-	"fu": "<a href=\"#Magic\">magic</a>",
+	"fu": "<a href=\"#Magic\">magic</a>", // language, to talk?
 	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
-	"na": "it, to be", "naka": "this", "nakaku": "that", "nasika": "everything",
+	"na": "it, to be", "naki": "this", "nakiku": "that", "nasika": "everything",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light, to see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", 
 		"gawa": "white", "gaga": "yellow",
-	"wi": "space", "wika": "here",
+	"wi": "space", "wiki": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go", "wuwa": "fly", "wuku": "stop",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when",
-	"ji": "time", "jika": "now", "jiga": "day", "jigaka": "today",
+	"ji": "time", "jiki": "now", "jiga": "day", "jigaki": "today",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
