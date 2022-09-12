@@ -23,12 +23,12 @@ const defs = {
 	"ku": "not", "kuna": "nothing",
 	"fa": "void, order", "faku": "chaos",
 	"fu": "<a href=\"#Magic\">magic</a>",
-	"si": "many", "siku": "only", "sika": "all", "sikana": "everything",
+	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
-	"na": "it, to be", "nasi": "them", "naka": "this", "nakaku": "that",
+	"na": "it, to be", "naka": "this", "nakaku": "that", "nasika": "everything",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light, to see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue", 
 		"gawa": "white", "gaga": "yellow",
@@ -124,68 +124,62 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 	context.stroke();
 };
 
-{
-	const orthography = document.getElementById("orthography");
-	const header = createChild(orthography, "tr");
-	for (const vowel of [..." iauiau "]) createChild(header, "td").innerText = vowel;
-	for (let i = 0; i < 6; ++i) {
-		const tr = createChild(orthography, "tr");
-		createChild(tr, "td").innerText = [..."ptkfsh"][i];
-		for (let j = 0; j < 6; ++j) {
-			const word = consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3];
-			const context = getContext(createChild(createChild(tr, "td"), "canvas"));
-			drawSymbol(context, word, defs.hasOwnProperty(word) ? "#EEE" : "#E11");
-		}
-		createChild(tr, "td").innerText = [..."mngwlj"][i];
+const orthography = document.getElementById("orthography");
+const header = createChild(orthography, "tr");
+for (const vowel of [..." iauiau "]) createChild(header, "td").innerText = vowel;
+for (let i = 0; i < 6; ++i) {
+	const tr = createChild(orthography, "tr");
+	createChild(tr, "td").innerText = [..."ptkfsh"][i];
+	for (let j = 0; j < 6; ++j) {
+		const word = consonants[i + 6 * Math.floor(j / 3)] + vowels[j % 3];
+		const context = getContext(createChild(createChild(tr, "td"), "canvas"));
+		drawSymbol(context, word, defs.hasOwnProperty(word) ? "#EEE" : "#E11");
 	}
+	createChild(tr, "td").innerText = [..."mngwlj"][i];
 }
 
-{
-	const wordSorter = (a, b) => {
-		const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
-		const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
-		if (c !== 0) return c;
-		else if (v !== 0) return v;
-		else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
-		else if (a.length > 2) return 1;
-		else if (b.length > 2) return -1;
-		else throw "duplicate word in sorter: " + a + ", " + b;
-	};
+const wordSorter = (a, b) => {
+	const c = consonants.indexOf(a[0]) - consonants.indexOf(b[0]);
+	const v = vowels.indexOf(a[1]) - vowels.indexOf(b[1]);
+	if (c !== 0) return c;
+	else if (v !== 0) return v;
+	else if (a.length > 2 && b.length > 2) return wordSorter(a.slice(2), b.slice(2));
+	else if (a.length > 2) return 1;
+	else if (b.length > 2) return -1;
+	else throw "duplicate word in sorter: " + a + ", " + b;
+};
 
-	Object.keys(defs).sort(wordSorter).forEach(r => {
-		const tr = createChild(document.getElementById("dictionary"), "tr");
-		createChild(tr, "td").innerText = r;
-		const td = createChild(tr, "td");
-		for (const symbol of r.match(/.{1,2}/g))
-			drawSymbol(getContext(createChild(td, "canvas")), symbol);
-		createChild(tr, "td").innerHTML = defs[r];
-	});
-}
+Object.keys(defs).sort(wordSorter).forEach(r => {
+	const tr = createChild(document.getElementById("dictionary"), "tr");
+	createChild(tr, "td").innerText = r;
+	const td = createChild(tr, "td");
+	for (const symbol of r.match(/.{1,2}/g))
+		drawSymbol(getContext(createChild(td, "canvas")), symbol);
+	createChild(tr, "td").innerHTML = defs[r];
+});
 
-{
-	const context = getContext(document.getElementById("magic"));
-	for (let i = 0; i < 6; ++i) {
-		const x = 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2);
-		const y = 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2);
-		context.strokeStyle = "#222";
-		for (let j = i + 1; j < 6; ++j) {
-			const x2 = 0.79 * Math.cos(j * Math.PI / 3 + Math.PI / 2);
-			const y2 = 0.79 * Math.sin(j * Math.PI / 3 + Math.PI / 2);
-			context.lineWidth = i + j === 6 || i === 0 && j === 3? 0.05: 0.03;
-			context.beginPath();
-			context.moveTo(x, y);
-			context.lineTo(x2, y2);
-			context.stroke();
-		}
-		context.lineWidth = 0.2;
-		context.save();
-		context.translate(x, y);
-		context.scale(0.1, 0.1);
-		context.fillStyle = ["#E33", "#3E3", "#333", "#33E", "#EEE", "#EE3"][i];
-		context.beginPath();
-		context.arc(0, 0, 2, 0, Math.PI * 2);
-		context.fill();
-		drawSymbol(context, elements[i], "#111");
-		context.restore();
+const magic = getContext(document.getElementById("magic"));
+for (let i = 0; i < 6; ++i) {
+	const x = 0.79 * Math.cos(i * Math.PI / 3 + Math.PI / 2);
+	const y = 0.79 * Math.sin(i * Math.PI / 3 + Math.PI / 2);
+	magic.strokeStyle = "#222";
+	for (let j = i + 1; j < 6; ++j) {
+		const x2 = 0.79 * Math.cos(j * Math.PI / 3 + Math.PI / 2);
+		const y2 = 0.79 * Math.sin(j * Math.PI / 3 + Math.PI / 2);
+		magic.lineWidth = i + j === 6 || i === 0 && j === 3? 0.05: 0.03;
+		magic.beginPath();
+		magic.moveTo(x, y);
+		magic.lineTo(x2, y2);
+		magic.stroke();
 	}
+	magic.lineWidth = 0.2;
+	magic.save();
+	magic.translate(x, y);
+	magic.scale(0.1, 0.1);
+	magic.fillStyle = ["#E33", "#3E3", "#333", "#33E", "#EEE", "#EE3"][i];
+	magic.beginPath();
+	magic.arc(0, 0, 2, 0, Math.PI * 2);
+	magic.fill();
+	drawSymbol(magic, elements[i], "#111");
+	magic.restore();
 }
