@@ -9,11 +9,9 @@
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
 //	path, round, seed, sun, tree
 
-// questions: why, how
-// sex: male, female
-// animacy: alive, dead, kill, die
-// time: past, future
-// to do
+// male, female
+// life, death
+// past, future
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -22,9 +20,9 @@ const defs = {
 	"ta": "creation", "taku": "destruction",
 	"tu": "and", "tuku": "separate",
 	"ki": "specific", "kiku": "general",
-	"ka": "earth", "kaku": "weak", "kani": "lava",
+	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
-	"fa": "void, control", "faku": "chaos",
+	"fa": "void, order", "faku": "chaos",
 	"fu": "<a href=\"#Magic\">magic</a>, fundamental",
 	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
@@ -32,14 +30,15 @@ const defs = {
 	"ha": "sound, talk", "haku": "quiet",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
-	"na": "it, be", "naki": "this", "nakiku": "that", "nasika": "everything",
+	"na": "it, noun, be", "naki": "this", "nasika": "everything",
+	"nu": "do, verb, succeed", "nuku": "fail",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow",
 	"wi": "space", "wiki": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go", "wuwa": "fly", "wuku": "stop",
-	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when",
+	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaki": "today",
 };
 
