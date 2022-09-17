@@ -1,14 +1,13 @@
 // nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
-//	leg/foot, horn, navel, back, egg, knee, liver, skin, thigh, eye, tail, belly, feather, 
+//	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
-// to come, to say, to hit, to eat/drink, to stand, to bite, 
+// to come, to say, to hit, to eat/drink, to stand,
 //	to give, to know, to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
-// root, name, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
+// root, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
 //	path, round, seed, sun, tree
-
 // male, female
 // life, death
 // past, future
@@ -27,7 +26,7 @@ const defs = {
 	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
-	"ha": "sound, talk", "haku": "quiet",
+	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it, noun, be", "naki": "this", "nasika": "everything",
