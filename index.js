@@ -31,7 +31,7 @@ const defs = {
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it, noun, be", "naki": "this", "nasika": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
-	"gi": "I, have", "giku": "you, give", "gisi": "we",
+	"gi": "I, have", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow",
 	"wi": "space", "wiki": "here",
