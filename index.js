@@ -22,7 +22,7 @@ const defs = {
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
 	"fa": "void, order", "faku": "chaos",
-	"fu": "<a href=\"#Magic\">magic</a>, fundamental",
+	"fu": "power, <a href=\"#Magic\">magic</a>",
 	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
