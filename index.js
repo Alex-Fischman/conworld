@@ -9,8 +9,8 @@
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
 //	path, round, seed, sun, tree
 // male, female
-// life, death
 // past, future
+// life, death
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
