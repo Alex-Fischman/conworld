@@ -10,7 +10,6 @@
 //	path, round, seed, sun, tree
 // male, female
 // past, future
-// life, death
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -34,6 +33,7 @@ const defs = {
 	"gi": "I, have", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow",
+	"gu": "life, live", "guku": "death",
 	"wi": "space", "wiki": "here",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go", "wuwa": "fly", "wuku": "stop", "wu  wiki": "come", "wujiku": "teleport",
