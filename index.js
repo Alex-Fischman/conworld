@@ -34,7 +34,7 @@ const defs = {
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow",
 	"gu": "life, live", "guku": "death",
-	"wi": "space", "wiki": "here",
+	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down",
 	"wa": "air, slow", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go", "wuwa": "fly", "wuku": "stop", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
