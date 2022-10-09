@@ -2,9 +2,9 @@
 //	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
 // to say, to hit, to eat/drink, to stand,
-//	to know, to laugh, to hear, to hide, to carry, to take, to blow, to run, 
+//	to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
-// root, louse, night, far, house, bitter, language name, big, fish, yesterday, new/old, 
+// root, louse, night, far, house, bitter, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
 //	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
 //	path, round, seed, sun, tree
@@ -15,8 +15,7 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
-	"ta": "creation", "taku": "destruction",
-	"tu": "and", "tuku": "separate",
+	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
@@ -25,10 +24,11 @@ const defs = {
 	"si": "many", "siku": "only", "sika": "all",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
-	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name",
+	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name", "haki": "this language's name",
+	"hu": "know", "huji": "learn", "hukuji": "forget",
 	"ma": "parent", "maku": "child",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
-	"na": "it, noun, be", "naki": "this", "nasika": "everything",
+	"na": "it, noun, be", "naji": "become", "naki": "this", "nasika": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
 	"gi": "I, have", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
