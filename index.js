@@ -22,6 +22,7 @@ const defs = {
 	"fa": "void, order", "faku": "chaos",
 	"fu": "power",
 	"si": "many", "siku": "only", "sika": "all",
+	"sa": "big", "saku": "small",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain", "suwu": "river",
 	"su  gani": "blood",
 	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name", "haki": "this language's name",
