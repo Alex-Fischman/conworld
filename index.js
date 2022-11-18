@@ -186,3 +186,12 @@ for (let i = 0; i < 6; ++i) {
 	drawSymbol(magic, elements[i], "#111");
 	magic.restore();
 }
+
+const generatorInput = document.getElementById("generatorInput");
+const generatorOutput = document.getElementById("generatorOutput");
+generatorInput.addEventListener("change", _ => {
+	generatorOutput.innerHTML = "";
+	generatorInput.value = generatorInput.value || "";
+	for (const symbol of generatorInput.value.match(/.{1,2}/g) || [])
+		drawSymbol(getContext(createChild(generatorOutput, "canvas")), symbol);
+});

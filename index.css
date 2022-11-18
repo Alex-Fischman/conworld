@@ -60,3 +60,10 @@ h1, h2, p {
 	width: 100%;
 	aspect-ratio: 1;
 }
+
+#generatorOutput canvas {
+	width: 18%;
+	aspect-ratio: 1;
+	margin: 1%;
+	margin-top: 10%;
+}
