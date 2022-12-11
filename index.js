@@ -2,16 +2,15 @@
 //	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
 // to hit, to eat/drink, to stand, to laugh, to hear, to hide, to carry, to take, to blow,
-//	to run, to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
-// root, house, bitter, leaf, thick, long, wood, ash, sweet, rope, shadow,
-//	salt, hard, full, grease, path, round, seed, tree
+//	to run, to fall, to tie, to crush/grind, to sit, to sleep, to walk
+// root, leaf, thick, wood, ash, rope, shadow, hard, full, path, round, seed, tree
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pu": "choose, or",
-	"tu": "creation, and", "tuku": "destruction",
+	"tu": "creation, and", "tuku": "destruction", "tusu": "cry, sad",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain",
 	"ku": "not", "kuna": "nothing",
@@ -19,7 +18,7 @@ const defs = {
 	"fa": "void, order", "faku": "chaos",
 	"fu": "power, strong", "fuku": "weak",
 	"si": "many", "siku": "only", "sika": "all",
-	"sa": "big", "saku": "small",
+	"sa": "big", "saku": "small", "saju": "long",
 	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
 		"su  gani": "blood", "suku": "dry",
 	"hi": "truth", "hiku": "lie",
@@ -37,6 +36,7 @@ const defs = {
 	"gu": "life, live", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish",
 		"guha": "human", "guja": "plant",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
+		"wiguha": "house",
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
