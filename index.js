@@ -30,7 +30,7 @@ const defs = {
 	"ma": "parent", "maku": "child",
 	"mu": "female",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
-		"nijijuna": "ash, smoke", "nisa": "star", "nisaki": "sun",
+		"ni  jiju  na": "ash, smoke", "nisa": "star", "nisaki": "sun",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nasika": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
 	"gi": "I, have", "giku": "you", "gisi": "we",
@@ -44,7 +44,7 @@ const defs = {
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
-		"jiga juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
+		"jiga  juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ju": "forward, next", "juku": "backward, previous",
 };
 
