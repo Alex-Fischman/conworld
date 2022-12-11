@@ -5,7 +5,6 @@
 // to take, to walk, to run, to sit, to sleep, to carry, to fall
 // root, leaf, seed, tree, wood
 // thick, rope, hard, full, path, round, moon
-// to feel
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -23,8 +22,9 @@ const defs = {
 	"sa": "big", "saku": "small", "saju": "long",
 	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
 		"su  gani": "blood", "suku": "dry",
-	"hi": "truth", "hiku": "lie",
+	"hi": "feel", "hifi": "happy",
 	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name", "haki": "this language's name",
+		"hafi": "truth", "hafiku": "lie",
 	"hu": "know", "huji": "learn", "hukuji": "forget",
 	"mi": "male",
 	"ma": "parent", "maku": "child",
