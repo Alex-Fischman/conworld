@@ -4,13 +4,13 @@
 // to hit, to eat/drink, to stand,
 //	to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
-// root, far, house, bitter, big, yesterday, new/old, 
+// root, house, bitter, big, yesterday, new/old, 
 //	sand, soil, leaf, thick, long, wood, ash, sweet, rope, shadow,
 //	salt, small, wide, star, in, hard, bark, full, grease, moon, mountain,
 //	path, round, seed, sun, tree
 // past, future
-// animal, plant, human
-// strong, weak
+// animal, plant
+//		bird, bug, fish, human: talking animal
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -23,7 +23,7 @@ const defs = {
 	"ku": "not", "kuna": "nothing",
 	"fi": "good, right", "fiku": "bad, wrong",
 	"fa": "void, order", "faku": "chaos",
-	"fu": "power",
+	"fu": "power, strong", "fuku": "weak",
 	"si": "many", "siku": "only", "sika": "all",
 	"sa": "big", "saku": "small",
 	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
@@ -41,7 +41,7 @@ const defs = {
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow",
 	"gu": "life, live", "guku": "death",
-	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down",
+	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
