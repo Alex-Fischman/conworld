@@ -40,7 +40,6 @@ const defs = {
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
-	"la": "outside", "laku": "inside",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ja": "sun", "jakiku": "star", "jaku": "moon",
