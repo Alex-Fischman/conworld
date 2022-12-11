@@ -4,7 +4,7 @@
 // to attack, to eat/drink, to stand, to laugh, to hear, to hide, to breathe, to tie, to crush/grind,
 // to take, to walk, to run, to sit, to sleep, to carry, to fall
 // root, leaf, seed, tree, wood
-// thick, rope, shadow, hard, full, path, round
+// thick, rope, shadow, hard, full, path, round, moon
 // to feel
 
 const consonants = [..."ptkfshmngwlj"];
@@ -29,7 +29,8 @@ const defs = {
 	"mi": "male",
 	"ma": "parent", "maku": "child",
 	"mu": "female",
-	"ni": "fire, hot", "niku": "cold", "niwa": "lightning", "nijijuna": "ash, smoke",
+	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
+		"nijijuna": "ash, smoke", "nisa": "star", "nisaki": "sun",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nasika": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
 	"gi": "I, have", "giku": "you", "gisi": "we",
@@ -44,7 +45,6 @@ const defs = {
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
-	"ja": "sun", "jakiku": "star", "jaku": "moon",
 	"ju": "forward, next", "juku": "backward, previous",
 };
 
