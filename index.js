@@ -10,7 +10,7 @@ const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pu": "choose, or",
-	"tu": "creation, and", "tuku": "destruction", "tusu": "cry",
+	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain",
 	"ku": "not", "kuna": "nothing",
