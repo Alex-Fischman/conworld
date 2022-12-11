@@ -4,7 +4,7 @@
 // to attack, to eat/drink, to stand, to laugh, to hear, to hide, to breathe, to tie, to crush/grind,
 // to take, to walk, to run, to sit, to sleep, to carry, to fall
 // root, leaf, seed, tree, wood
-// thick, rope, hard, full, path, round, moon
+// thick, rope, hard, full, path, round
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -36,8 +36,7 @@ const defs = {
 	"gi": "I, have", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow",
-	"gu": "life, live", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish",
-		"guha": "human", "guja": "plant",
+	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguha": "house",
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
