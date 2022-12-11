@@ -6,8 +6,6 @@
 // root, house, bitter, leaf, thick, long, wood, ash, sweet, rope, shadow,
 //	salt, in, hard, full, grease, path, round, seed, tree
 
-// past, future, new, old, yesterday, next, previous
-
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
@@ -43,8 +41,9 @@ const defs = {
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
-		"jiku": "instant",
+		"jiga juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ja": "sun", "jakiku": "star", "jaku": "moon",
+	"ju": "next", "juku": "previous",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
