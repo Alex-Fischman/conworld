@@ -1,12 +1,12 @@
 // nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
 //	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
-// to say, to hit, to eat/drink, to stand,
+// to hit, to eat/drink, to stand,
 //	to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
 // root, louse, night, far, house, bitter, big, fish, yesterday, new/old, 
 //	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
-//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, lie, human, moon, mountain,
+//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, human, moon, mountain,
 //	path, round, seed, sun, tree
 // male, female
 // past, future
@@ -15,6 +15,7 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
+	"pu": "choose, or",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
@@ -25,6 +26,7 @@ const defs = {
 	"sa": "big", "saku": "small",
 	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
 	"su  gani": "blood",
+	"hi": "truth", "hiku": "lie",
 	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name", "haki": "this language's name",
 	"hu": "know", "huji": "learn", "hukuji": "forget",
 	"ma": "parent", "maku": "child",
