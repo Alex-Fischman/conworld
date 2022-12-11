@@ -4,7 +4,7 @@
 // to hit, to eat/drink, to stand, to laugh, to hear, to hide, to carry, to take, to blow,
 //	to run, to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
 // root, house, bitter, leaf, thick, long, wood, ash, sweet, rope, shadow,
-//	salt, in, hard, full, grease, path, round, seed, tree
+//	salt, hard, full, grease, path, round, seed, tree
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -40,6 +40,7 @@ const defs = {
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
+	"la": "outside", "laku": "inside",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ja": "sun", "jakiku": "star", "jaku": "moon",
