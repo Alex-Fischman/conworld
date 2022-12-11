@@ -2,7 +2,7 @@
 //	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
-// to take, to walk, to run, to sit, to sleep, to carry, to fall
+// to take, to walk, to run, to sit, to sleep, to carry
 // root, leaf, seed, tree, wood
 // thick, rope, hard, path, round
 
@@ -41,6 +41,7 @@ const defs = {
 		"wiguha": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
+		"wuwisu": "fall", "wuwini": "rise",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga  juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
