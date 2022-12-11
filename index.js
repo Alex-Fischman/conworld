@@ -1,9 +1,11 @@
 // nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
 //	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
-// to hit, to eat/drink, to stand, to laugh, to hear, to hide, to carry, to take, to blow,
-//	to run, to fall, to tie, to crush/grind, to sit, to sleep, to walk
-// root, leaf, thick, wood, ash, rope, shadow, hard, full, path, round, seed, tree
+// to attack, to eat/drink, to stand, to laugh, to hear, to hide, to breathe, to tie, to crush/grind,
+// to take, to walk, to run, to sit, to sleep, to carry, to fall
+// root, leaf, seed, tree, wood
+// thick, rope, shadow, hard, full, path, round
+// to feel
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -27,7 +29,7 @@ const defs = {
 	"mi": "male",
 	"ma": "parent", "maku": "child",
 	"mu": "female",
-	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
+	"ni": "fire, hot", "niku": "cold", "niwa": "lightning", "nijijuna": "ash, smoke",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nasika": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
 	"gi": "I, have", "giku": "you", "gisi": "we",
