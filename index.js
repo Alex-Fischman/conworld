@@ -43,7 +43,7 @@ const defs = {
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ja": "sun", "jakiku": "star", "jaku": "moon",
-	"ju": "next", "juku": "previous",
+	"ju": "forward, next", "juku": "backward, previous",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
