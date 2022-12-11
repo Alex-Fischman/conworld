@@ -5,12 +5,12 @@
 //	to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
 // root, far, house, bitter, big, yesterday, new/old, 
-//	sand, soil, leaf, heavy, thick, long, wood, ash, sweet, rope, shadow,
-//	salt, small, wide, star, in, hard, bark, dry, full, grease, moon, mountain,
+//	sand, soil, leaf, thick, long, wood, ash, sweet, rope, shadow,
+//	salt, small, wide, star, in, hard, bark, full, grease, moon, mountain,
 //	path, round, seed, sun, tree
-// male, female
 // past, future
 // animal, plant, human
+// strong, weak
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -19,19 +19,21 @@ const defs = {
 	"pu": "choose, or",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
-	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
+	"ka": "earth, heavy", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
 	"fi": "good, right", "fiku": "bad, wrong",
 	"fa": "void, order", "faku": "chaos",
 	"fu": "power",
 	"si": "many", "siku": "only", "sika": "all",
 	"sa": "big", "saku": "small",
-	"su": "water", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
-	"su  gani": "blood",
+	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
+		"su  gani": "blood", "suku": "dry",
 	"hi": "truth", "hiku": "lie",
 	"ha": "sound, language, talk", "haku": "quiet", "hagi": "name", "haki": "this language's name",
 	"hu": "know", "huji": "learn", "hukuji": "forget",
+	"mi": "male",
 	"ma": "parent", "maku": "child",
+	"mu": "female",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nasika": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
