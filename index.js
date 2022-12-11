@@ -4,7 +4,7 @@
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
 // to take, to walk, to run, to sit, to sleep, to carry, to fall
 // root, leaf, seed, tree, wood
-// thick, rope, hard, full, path, round
+// thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -16,7 +16,7 @@ const defs = {
 	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain", "kasa  jugaku": "moon",
 	"ku": "not", "kuna": "nothing",
 	"fi": "good, right", "fiku": "bad, wrong",
-	"fa": "void, order", "faku": "chaos",
+	"fa": "void, order", "faku": "chaos, full",
 	"fu": "power, strong", "fuku": "weak",
 	"si": "many", "siku": "only", "sika": "all",
 	"sa": "big", "saku": "small", "saju": "long",
