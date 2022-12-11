@@ -1,6 +1,5 @@
-// nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
-//	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
-//	finger/toenail, head, heart, 
+// nose, mouth, tongue, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, leg/foot, horn,
+//	back, egg, knee, skin, thigh, eye, tail, belly, feather, finger/toenail, head, heart, 
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
 // to take, to walk, to run, to sit, to sleep, to carry
 // root, leaf, seed, tree, wood
