@@ -1,15 +1,12 @@
 // nose, mouth, tongue, blood, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, 
 //	leg/foot, horn, navel, back, egg, knee, skin, thigh, eye, tail, belly, feather, 
 //	finger/toenail, head, heart, 
-// to hit, to eat/drink, to stand,
-//	to laugh, to hear, to hide, to carry, to take, to blow, to run, 
-//	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
-// root, house, bitter, big, yesterday, new/old, 
-//	sand, leaf, thick, long, wood, ash, sweet, rope, shadow,
-//		salt, small, in, hard, bark, full, grease
-//		path, round, seed, tree
-// past, future
-// sun, plant, star, moon
+// to hit, to eat/drink, to stand, to laugh, to hear, to hide, to carry, to take, to blow,
+//	to run, to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
+// root, house, bitter, leaf, thick, long, wood, ash, sweet, rope, shadow,
+//	salt, in, hard, full, grease, path, round, seed, tree
+
+// past, future, new, old, yesterday, next, previous
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -40,13 +37,14 @@ const defs = {
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow",
 	"gu": "life, live", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish",
-		"guha": "human",
+		"guha": "human", "guja": "plant",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiku": "instant",
+	"ja": "sun", "jakiku": "star", "jaku": "moon",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
