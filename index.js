@@ -4,12 +4,13 @@
 // to hit, to eat/drink, to stand,
 //	to laugh, to hear, to hide, to carry, to take, to blow, to run, 
 //	to fall, to cry, to tie, to crush/grind, to sit, to sleep, to walk
-// root, louse, night, far, house, bitter, big, fish, yesterday, new/old, 
-//	good, sand, soil, leaf, bug, heavy, thick, long, wood, ash, dot/pet, sweet, rope, shadow,
-//	bird, salt, small, wide, star, in, hard, bark, dry, full, grease, human, moon, mountain,
+// root, far, house, bitter, big, yesterday, new/old, 
+//	sand, soil, leaf, heavy, thick, long, wood, ash, sweet, rope, shadow,
+//	salt, small, wide, star, in, hard, bark, dry, full, grease, moon, mountain,
 //	path, round, seed, sun, tree
 // male, female
 // past, future
+// animal, plant, human
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -20,6 +21,7 @@ const defs = {
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, strong", "kaku": "weak", "kani": "lava",
 	"ku": "not", "kuna": "nothing",
+	"fi": "good, right", "fiku": "bad, wrong",
 	"fa": "void, order", "faku": "chaos",
 	"fu": "power",
 	"si": "many", "siku": "only", "sika": "all",
@@ -41,7 +43,8 @@ const defs = {
 	"wa": "air, fast", "waku": "slow", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
-	"ji": "time", "jiki": "now", "jiga": "day", "jigaki": "today", "jiku": "instant",
+	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
+		"jiku": "instant",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
