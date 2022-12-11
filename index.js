@@ -14,7 +14,7 @@ const defs = {
 	"pu": "choose, or",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
-	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain",
+	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain", "kasa  jugaku": "moon",
 	"ku": "not", "kuna": "nothing",
 	"fi": "good, right", "fiku": "bad, wrong",
 	"fa": "void, order", "faku": "chaos",
