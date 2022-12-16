@@ -20,7 +20,7 @@ const defs = {
 	"si": "many", "siku": "only",
 	"sa": "big", "saku": "small", "saju": "long",
 	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
-		"su  gani": "blood", "suku": "dry",
+		"sugu": "blood", "suku": "dry",
 	"hi": "feel", "hifi": "happy",
 	"ha": "sound, language, talk", "haku": "quiet", "nahaku": "listen", "hagi": "name",
 		"haki": "this language's name", "hafi": "truth", "hafiku": "lie",
