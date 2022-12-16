@@ -10,6 +10,7 @@ const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pu": "choose, or",
+	"ta": "have", "taju": "get", "tajuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain", "kasa  jigaku": "moon",
@@ -31,7 +32,7 @@ const defs = {
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning", "nisa": "star",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nakiku": "everything",
 	"nu": "do, verb, succeed", "nuku": "fail",
-	"gi": "I, have", "giku": "you", "gisi": "we",
+	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow", "gasa": "sun",
 	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
