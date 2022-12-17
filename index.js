@@ -1,8 +1,8 @@
 // nose, tongue, wing, arm/hand, neck, hair, leg/foot, horn,
-//	knee, skin, thigh, tail, belly, feather, finger/toenail, head, heart, 
+//	knee, thigh, tail, belly, feather, finger/toenail, head, heart, 
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
 // to walk, to run, to sit, to sleep, to carry
-// root, seed, tree
+// root, tree
 // thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
@@ -39,7 +39,7 @@ const defs = {
 	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
 		"gupi": "meat, flesh", "gupika": "bone, wood", "gupiga": "eye, leaf",
 		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
-		"gupijuku": "back", "gupigu": "egg", "gupija": "skin, bark",
+		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguha": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
