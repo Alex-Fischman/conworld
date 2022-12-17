@@ -10,7 +10,7 @@ const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pu": "choose, or",
-	"ta": "have", "tajiju": "get", "tajijuku": "lose",
+	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain", "kasa  jigaku": "moon",
