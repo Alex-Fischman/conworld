@@ -9,9 +9,9 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
-	"pi": "part", "pigu": "meat, flesh", "piguka": "bone, wood", "piguga": "eye", "piguha": "mouth",
-		"pigunuhaku": "ear", "piguhaka": "tooth", "piguju": "breast", "pigujuku": "back",
-		"pigugu": "egg",
+	"pi": "part", "pigu": "meat, flesh", "piguka": "bone, wood", "piguga": "eye, leaf",
+		"piguha": "mouth", "pigunuhaku": "ear", "piguhaka": "tooth", "piguju": "breast",
+		"pigujuku": "back", "pigugu": "egg",
 	"pu": "choose, or",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
