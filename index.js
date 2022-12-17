@@ -9,6 +9,7 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
+	"pi": "part", "piguka": "bone, wood", "piguga": "eye", "piguha": "mouth", "pigunuhaku": "ear",
 	"pu": "choose, or",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
@@ -23,7 +24,7 @@ const defs = {
 	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
 		"sugu": "blood", "suku": "dry",
 	"hi": "feel", "hifi": "happy",
-	"ha": "sound, language, talk", "haku": "quiet", "nahaku": "listen", "hagi": "name",
+	"ha": "sound, language, talk", "haku": "quiet", "nuhaku": "listen", "hagi": "name",
 		"haki": "this language's name", "hafi": "truth", "hafiku": "lie",
 	"hu": "know", "huji": "learn", "hukuji": "forget",
 	"mi": "male",
