@@ -1,6 +1,5 @@
-// nose, tongue, wing, arm/hand, neck, hair, leg/foot, horn,
-//	knee, thigh, tail, belly, feather, finger/toenail, head, heart, 
-// to attack, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
+// nose, tongue, wing, arm/hand, hair, leg/foot, tail, belly, feather, finger/toenail, head, heart
+// to attack, to stand, to laugh, to hide, to tie, to crush/grind
 // to walk, to run, to sit, to sleep, to carry
 // thick, rope, hard, path, round
 
@@ -26,7 +25,7 @@ const defs = {
 	"hi": "feel", "hifi": "happy",
 	"ha": "sound, language, talk", "haku": "quiet", "nuhaku": "listen", "hagi": "name",
 		"haki": "this language's name", "hafi": "truth", "hafiku": "lie",
-	"hu": "know", "huji": "learn", "hukuji": "forget",
+	"hu": "know, think", "huji": "learn", "hukuji": "forget",
 	"mi": "male",
 	"ma": "parent", "maku": "child",
 	"mu": "female",
@@ -36,12 +35,13 @@ const defs = {
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow", "gasa": "sun",
-	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
-		"guka": "tree", "gupi": "meat, flesh", "gupika": "bone, wood", "gupiga": "eye, leaf",
+	"gu": "life", "guku": "death", "guwa": "bird, breathe", "gusaku": "bug", "gusu": "fish",
+		"guka": "tree", "gupi": "meat, flesh", "gupika": "bone, wood, horn", "gupiga": "eye, leaf",
 		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
 		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark", "gukasu": "root",
+		"guhu": "human",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
-		"wiguha": "house",
+		"wiguhu": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 		"wuwisu": "fall", "wuwini": "rise",
