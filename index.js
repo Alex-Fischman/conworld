@@ -1,6 +1,6 @@
 // nose, tongue, wing, arm/hand, neck, hair, leg/foot, horn,
 //	knee, thigh, tail, belly, feather, finger/toenail, head, heart, 
-// to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
+// to attack, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
 // to walk, to run, to sit, to sleep, to carry
 // thick, rope, hard, path, round
 
@@ -10,6 +10,7 @@ const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "part",
 	"pu": "choose, or",
+	"ti": "eat, absorb", "hiti": "hunger",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
