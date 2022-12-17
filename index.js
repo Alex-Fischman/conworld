@@ -9,9 +9,7 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
-	"pi": "part", "pigu": "meat, flesh", "piguka": "bone, wood", "piguga": "eye, leaf",
-		"piguha": "mouth", "pigu  nuhaku": "ear", "piguhaka": "tooth", "piguju": "breast",
-		"pigujuku": "back", "pigugu": "egg",
+	"pi": "part",
 	"pu": "choose, or",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
@@ -39,6 +37,9 @@ const defs = {
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow", "gasa": "sun",
 	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
+		"gupi": "meat, flesh", "gupika": "bone, wood", "gupiga": "eye, leaf",
+		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
+		"gupijuku": "back", "gupigu": "egg",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguha": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
