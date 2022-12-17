@@ -2,7 +2,7 @@
 //	knee, skin, thigh, tail, belly, feather, finger/toenail, head, heart, 
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
 // to walk, to run, to sit, to sleep, to carry
-// root, leaf, seed, tree
+// root, seed, tree
 // thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
@@ -10,7 +10,7 @@ const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "part", "pigu": "meat, flesh", "piguka": "bone, wood", "piguga": "eye, leaf",
-		"piguha": "mouth", "pigunuhaku": "ear", "piguhaka": "tooth", "piguju": "breast",
+		"piguha": "mouth", "pigu  nuhaku": "ear", "piguhaka": "tooth", "piguju": "breast",
 		"pigujuku": "back", "pigugu": "egg",
 	"pu": "choose, or",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
