@@ -39,7 +39,7 @@ const defs = {
 	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
 		"gupi": "meat, flesh", "gupika": "bone, wood", "gupiga": "eye, leaf",
 		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
-		"gupijuku": "back", "gupigu": "egg",
+		"gupijuku": "back", "gupigu": "egg", "gupija": "skin, bark",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguha": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
@@ -48,6 +48,7 @@ const defs = {
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga  juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
+	"ja": "out", "jaku": "in",
 	"ju": "forward, next", "juku": "backward, previous",
 };
 
