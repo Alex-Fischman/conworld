@@ -1,4 +1,4 @@
-// nose, tongue, wing, arm/hand, hair, leg/foot, tail, belly, feather, finger/toenail, head, heart
+// nose, wing, arm/hand, hair, leg/foot, tail, belly, feather, finger/toenail, head, heart
 // to attack, to stand, to laugh, to hide, to tie, to crush/grind
 // to walk, to run, to sit, to sleep, to carry
 // thick, rope, hard, path, round
@@ -9,7 +9,7 @@ const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "part",
 	"pu": "choose, or",
-	"ti": "eat, absorb", "hiti": "hunger",
+	"ti": "eat, absorb", "tihi": "taste",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
@@ -22,7 +22,7 @@ const defs = {
 	"sa": "big", "saku": "small", "saju": "long",
 	"su": "water, wet", "suni": "acid, poison, alcohol", "suwa": "rain, clean", "suwu": "river",
 		"sugu": "blood", "suku": "dry",
-	"hi": "feel", "hifi": "happy",
+	"hi": "feel", "hifi": "happy", "hiti": "hungry",
 	"ha": "sound, language, talk", "haku": "quiet", "nuhaku": "listen", "hagi": "name",
 		"haki": "this language's name", "hafi": "truth", "hafiku": "lie",
 	"hu": "know, think", "huji": "learn", "hukuji": "forget",
@@ -39,7 +39,7 @@ const defs = {
 		"guka": "tree", "gupi": "meat, flesh", "gupika": "bone, wood, horn", "gupiga": "eye, leaf",
 		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
 		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark", "gukasu": "root",
-		"guhu": "human",
+		"guhu": "human", "gupitihi": "tongue",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguhu": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
