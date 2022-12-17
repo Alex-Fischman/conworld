@@ -2,7 +2,6 @@
 //	knee, thigh, tail, belly, feather, finger/toenail, head, heart, 
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
 // to walk, to run, to sit, to sleep, to carry
-// root, tree
 // thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
@@ -37,9 +36,9 @@ const defs = {
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
 		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow", "gasa": "sun",
 	"gu": "life", "guku": "death", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guha": "human",
-		"gupi": "meat, flesh", "gupika": "bone, wood", "gupiga": "eye, leaf",
+		"guka": "tree", "gupi": "meat, flesh", "gupika": "bone, wood", "gupiga": "eye, leaf",
 		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
-		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark",
+		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark", "gukasu": "root",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguha": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
