@@ -1,15 +1,16 @@
-// nose, mouth, tongue, bone, breast, wing, meat, arm/hand, ear, neck, tooth, hair, leg/foot, horn,
-//	back, egg, knee, skin, thigh, eye, tail, belly, feather, finger/toenail, head, heart, 
+// nose, tongue, breast, wing, arm/hand, neck, hair, leg/foot, horn,
+//	back, egg, knee, skin, thigh, tail, belly, feather, finger/toenail, head, heart, 
 // to attack, to eat/drink, to stand, to laugh, to hide, to breathe, to tie, to crush/grind,
-// to take, to walk, to run, to sit, to sleep, to carry
-// root, leaf, seed, tree, wood
+// to walk, to run, to sit, to sleep, to carry
+// root, leaf, seed, tree
 // thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
-	"pi": "part", "piguka": "bone, wood", "piguga": "eye", "piguha": "mouth", "pigunuhaku": "ear",
+	"pi": "part", "pigu": "meat, flesh", "piguka": "bone, wood", "piguga": "eye", "piguha": "mouth",
+		"pigunuhaku": "ear", "piguhaka": "tooth",
 	"pu": "choose, or",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
