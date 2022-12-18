@@ -1,6 +1,5 @@
 // hair, finger/toenail
 // to attack, to laugh, to hide, to tie, to crush/grind
-// to stand, to sit
 // thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
@@ -46,7 +45,7 @@ const defs = {
 		"wiguhu": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
-		"wuwisu": "fall", "wuwini": "rise", "wuta": "carry",
+		"wuwisu": "fall", "wuwini": "raise, stand", "wuwisu": "lower, sit", "wuta": "carry",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
 	"la": "sleep",
 	"lu": "smell",
