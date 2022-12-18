@@ -1,5 +1,3 @@
-// round
-
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
@@ -83,7 +81,7 @@ const drawSymbol = (context, symbol, color = "#EEE") => {
 	const normalVowelLine = () => {
 		if (symbol[1] === "i") line(0.8, 0.8, -0.8, 0.8);
 		else if (symbol[1] === "a") line(0.8, -0.8, -0.8, -0.8);
-		else if (symbol[1] === "u") line(0.8, 0, -0.8, 0)
+		else if (symbol[1] === "u") line(0.8, 0, -0.8, 0);
 		else throw "unknown vowel in symbol: " + symbol;
 	};
 	context.beginPath();
