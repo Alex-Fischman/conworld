@@ -1,4 +1,3 @@
-// laugh
 // rope, tie
 // path
 // round
@@ -8,7 +7,7 @@ const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "part, split",
-	"pa": "attack, violence", "paku": "peace", "papa": "defend", "pa ka": "crush, grind",
+	"pa": "attack, violence", "paku": "peace", "papa": "defend", "pa  ka": "crush, grind",
 	"pu": "choose, or",
 	"ti": "eat, absorb", "tihi": "taste",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
@@ -25,7 +24,7 @@ const defs = {
 		"sugu": "blood", "suku": "dry",
 	"hi": "feel", "hifi": "happy", "hiti": "hungry",
 	"ha": "sound, language, talk", "haku": "quiet", "nuhaku": "listen", "hagi": "name",
-		"haki": "this language's name", "hafi": "truth", "hafiku": "lie",
+		"haki": "this language's name", "hafi": "truth", "hafiku": "lie", "hahifi": "laugh",
 	"hu": "know, think", "huji": "learn", "hukuji": "forget",
 	"mi": "male",
 	"ma": "parent", "maku": "child",
