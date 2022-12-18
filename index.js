@@ -1,8 +1,5 @@
-// to attack
-// to laugh
-// rope, to tie
-// to crush
-// hard
+// laugh
+// rope, tie
 // path
 // round
 
@@ -10,7 +7,8 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
-	"pi": "part",
+	"pi": "part, split",
+	"pa": "attack, violence", "paku": "peace", "papa": "defend", "pa ka": "crush, grind",
 	"pu": "choose, or",
 	"ti": "eat, absorb", "tihi": "taste",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
