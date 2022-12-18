@@ -1,5 +1,10 @@
-// to attack, to laugh, to tie, to crush/grind
-// thick, rope, hard, path, round
+// to attack
+// to laugh
+// rope, to tie
+// to crush
+// hard
+// path
+// round
 
 const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
@@ -11,7 +16,7 @@ const defs = {
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
 	"tu": "creation, and", "tuku": "destruction",
 	"ki": "specific", "kiku": "general",
-	"ka": "earth, heavy", "kani": "lava", "kasa": "mountain", "kasa  jigaku": "moon",
+	"ka": "earth, hard", "kaku": "soft", "kani": "lava", "kasa": "mountain", "kasa  jigaku": "moon",
 	"ku": "not", "kuna": "nothing",
 	"fi": "good, right", "fiku": "bad, wrong",
 	"fa": "void, order", "faku": "chaos, full",
