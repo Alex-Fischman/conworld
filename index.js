@@ -1,5 +1,5 @@
 // hair
-// to attack, to laugh, to hide, to tie, to crush/grind
+// to attack, to laugh, to tie, to crush/grind
 // thick, rope, hard, path, round
 
 const consonants = [..."ptkfshmngwlj"];
@@ -33,7 +33,7 @@ const defs = {
 	"nu": "do, verb, succeed", "nuku": "fail",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light, see", "gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
-		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow", "gasa": "sun",
+		"gawa": "white", "gaga": "yellow", "gaku": "darkness, shadow, hide", "gasa": "sun",
 	"gu": "life", "guku": "death", "guwa": "bird, breathe", "gusaku": "bug", "gusu": "fish",
 		"guka": "tree", "gupi": "meat, flesh", "gupika": "bone, wood, horn", "gupiga": "eye, leaf",
 		"gupiha": "mouth", "gupi  nuhaku": "ear", "gupihaka": "tooth", "gupiju": "breast",
