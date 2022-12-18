@@ -1,4 +1,4 @@
-// arm/hand, hair, leg/foot, finger/toenail
+// hair, finger/toenail
 // to attack, to stand, to laugh, to hide, to tie, to crush/grind
 // to walk, to run, to sit, to sleep, to carry
 // thick, rope, hard, path, round
@@ -41,7 +41,7 @@ const defs = {
 		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark", "gukasu": "root",
 		"guhu": "human", "gupitihi": "tongue", "guwapi": "wing", "giwapi  saku": "feather",
 		"gupijuku  saju": "tail", "gupiju  wisu": "belly", "gupihu": "head", "gupihi": "heart",
-		"gupila": "nose",
+		"gupila": "nose", "gupinu": "hand, arm", "gupiwu": "leg, foot",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguhu": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
