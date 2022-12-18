@@ -1,4 +1,4 @@
-// nose, arm/hand, hair, leg/foot, finger/toenail
+// arm/hand, hair, leg/foot, finger/toenail
 // to attack, to stand, to laugh, to hide, to tie, to crush/grind
 // to walk, to run, to sit, to sleep, to carry
 // thick, rope, hard, path, round
@@ -41,12 +41,14 @@ const defs = {
 		"gupijuku": "back", "gupigu": "egg, seed", "gupija": "skin, bark", "gukasu": "root",
 		"guhu": "human", "gupitihi": "tongue", "guwapi": "wing", "giwapi  saku": "feather",
 		"gupijuku  saju": "tail", "gupiju  wisu": "belly", "gupihu": "head", "gupihi": "heart",
+		"gupila": "nose",
 	"wi": "space", "wiki": "here", "wini": "up", "wisu": "down", "wisa": "far", "wisaku": "near",
 		"wiguhu": "house",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
 	"wu": "go, fast", "wuwa": "fly", "wuku": "stop, slow", "wu  wiki": "come", "wujiku": "teleport",
 		"wuwisu": "fall", "wuwini": "rise",
 	"li": "question", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
+	"la": "smell",
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga  juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ja": "out", "jaku": "in",
