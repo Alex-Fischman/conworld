@@ -1,5 +1,3 @@
-// rope, tie
-// path
 // round
 
 const consonants = [..."ptkfshmngwlj"];
@@ -54,7 +52,7 @@ const defs = {
 	"ji": "time", "jiki": "now", "jiga": "day", "jigaku": "night", "jigaki": "today",
 		"jiga  juku": "yesterday", "jiku": "instant", "jiju": "future, new", "jijuku": "past, old",
 	"ja": "out", "jaku": "in",
-	"ju": "forward, next", "juku": "backward, previous",
+	"ju": "forward, next", "juku": "backward, previous", "juna": "path",
 };
 
 const createChild = (parent, type) => parent.appendChild(document.createElement(type));
