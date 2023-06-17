@@ -23,7 +23,7 @@ const defs = {
 		"hagi": "name", "hafi": "truth", "hafiku": "lie", "hahifi": "laugh",
 	"hu": "know, think", "huji": "learn", "hukuji": "forget",
 	"mi": "male",
-	"ma": "parent", "maku": "child",
+	"ma": "parent", "maku": "child", "makumi": "son", "makumu": "daughter",
 	"mu": "female",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning", "nisa": "star",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nakiku": "everything",
