@@ -7,7 +7,7 @@ const defs = {
 	"pu": "choose, or",
 	"ti": "eat, absorb", "tihi": "taste",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
-	"tu": "creation, and", "tuku": "destruction",
+	"tu": "creation, and", "tuku": "destruction", "tuma": "birth",
 	"ki": "specific", "kiku": "general",
 	"ka": "earth, hard", "kaku": "soft", "kani": "lava", "kasa": "mountain", "kasa  jigaku": "moon",
 	"ku": "not", "kuna": "nothing",
