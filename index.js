@@ -21,7 +21,7 @@ const defs = {
 	"hi": "feel", "hifi": "happy", "hiti": "hungry",
 	"ha": "sound, language, talk", "hahi": "hear", "haku": "quiet",
 		"hagi": "name", "hafi": "truth", "hafiku": "lie", "hahifi": "laugh",
-	"hu": "know, think", "huji": "learn", "hukuji": "forget",
+	"hu": "know, think", "huji": "learn", "hujiku": "forget",
 	"mi": "male",
 	"ma": "parent", "maku": "child", "makumi": "son", "makumu": "daughter",
 	"mu": "female",
