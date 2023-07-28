@@ -27,7 +27,7 @@ const defs = {
 	"mu": "female",
 	"ni": "fire, hot", "niku": "cold", "niwa": "lightning", "nisa": "star",
 	"na": "it, noun, be", "naji": "become", "naki": "this", "nakiku": "everything",
-	"nu": "do, verb, succeed", "nuku": "fail",
+	"nu": "do, verb", "nufi": "succeed", "nufiku": "fail",
 	"gi": "I", "giku": "you", "gisi": "we",
 	"ga": "light", "gahi": "see",
 		"gani": "red", "gaka": "green", "gafa": "black", "gasu": "blue",
