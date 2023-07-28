@@ -2,7 +2,7 @@ const consonants = [..."ptkfshmngwlj"];
 const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
-	"pi": "split",
+	"pi": "part",
 	"pa": "attack", "paku": "peace", "papa": "defend", "pa  ka": "crush, grind",
 	"pu": "choose, or",
 	"ti": "absorb", "tihi": "taste",
