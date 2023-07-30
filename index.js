@@ -3,7 +3,7 @@ const vowels = [..."iau"];
 const elements = ["ni", "ka", "fa", "su", "wa", "ga"];
 const defs = {
 	"pi": "part, split",
-	"pa": "attack, violence", "paku": "peace", "papa": "defend", "paka": "crush, grind",
+	"pa": "attack, violence", "paku": "peace", "papa": "defend",
 	"pu": "choice, or",
 	"ti": "absorb, eat", "tihi": "taste",
 	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
@@ -28,10 +28,8 @@ const defs = {
 	"nu": "verb, do", "nufi": "succeed",
 	"gi": "myself", "giku": "you", "gisi": "we",
 	"ga": "light", "gahi": "see", "gasa": "sun",
-	"gu": "life", "guwa": "bird", "gusaku": "bug", "gusu": "fish", "guka": "tree",
-		"guhu": "human", "gupinu": "hand, arm", "gupiwu": "leg, foot",
-	"wi": "space, direction", "wiki": "here", "wisa": "far",
-		"wini": "up", "wiwa": "up", "wika": "down", "wisu": "down",
+	"gu": "life", "guhu": "human", "gupinu": "hand, arm", "gupiwu": "leg, foot",
+	"wi": "space, direction", "wiki": "here", "wisa": "far", "wiwa": "up", "wika": "down",
 	"wa": "air", "wawu": "wind", "wasu": "cloud",
 	"wu": "move, go", "wuwa": "fly", "wujiku": "teleport", "wuta": "carry",
 	"li": "ask", "lina": "what", "ligi": "who", "liwi": "where", "liji": "when", "linu": "how",
