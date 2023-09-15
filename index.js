@@ -15,7 +15,7 @@ const defs = {
 	"fa": "void, order", "faku": "chaos, weird",
 	"fu": "power, strength",
 	"si": "plural, number", "siku": "only",
-	"sa": "large", "saju": "long",
+	"sa": "large", "saju": "long", "sana": "size",
 	"su": "water", "suwa": "rain", "sugu": "blood", "suni": "acid", "sufaku": "alcohol",
 	"hi": "sense, feel", "hifi": "happy", "hiti": "hungry", "hita": "want",
 	"ha": "sound", "hahi": "hear", "hagi": "name", "hafi": "truth", "hahifi": "laugh",
