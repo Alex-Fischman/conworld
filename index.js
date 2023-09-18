@@ -6,7 +6,7 @@ const defs = {
 	"pa": "attack, violence", "paku": "peace", "papa": "defend",
 	"pu": "choice, or",
 	"ti": "absorb, eat", "tihi": "taste",
-	"ta": "have", "tajiju": "gain", "tajijuku": "lose",
+	"ta": "have", "tajiju": "gain", "tajijuku": "lose", "tapa": "steal",
 	"tu": "create, and", "tuma": "birth",
 	"ki": "focus, specific",
 	"ka": "earth, hard", "kani": "lava", "kasa": "mountain",
